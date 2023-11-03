@@ -30,11 +30,21 @@
     height:100%;
     background-color:rgb(28,117,188);
 }
+#sideMenuItemContainers{
+    position:relative;
+    height:100%;
+    top:75px;
+}
   .sideMenuItem{
     height:75px;
     width:100%;
-    background-color:black;
-    margin-top:15%;
-    gap:10px;
+
+
+    border-color:black;
+    border-width:1px;
+    border-bottom-style:solid;
+}
+#sideMenuItem1{
+    border-top-style:solid;
 }
   

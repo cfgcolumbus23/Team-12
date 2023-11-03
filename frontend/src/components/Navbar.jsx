@@ -1,8 +1,12 @@
 import React from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 const Navbar = () => {
-  const menuOpen = true;
+    const [menuOpen,setMenuOpen] = useState(false);
+    function menuClicked(){
+        setMenuOpen(!menuOpen)
+    }
   return (
     <div>
       <div id="navBarMain">
