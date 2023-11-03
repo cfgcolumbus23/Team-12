@@ -1,16 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  function menuClicked() {
+    setMenuOpen(!menuOpen);
+  }
+
   return (
-    <div id="navBarMain">
+    <div>
+      <div id="navBarMain">
+        <img id="navBarLogo" src="logo.webp" alt="Logo" />
+        <img
+          id="navBarMenuIcon"
+          src="three.svg"
+          alt="Menu Icon"
+          onClick={() => menuClicked()}
+        />
+        <Link to="/messages">MESSAGES</Link>
+        <Link to="/feedback">FEEDBACK</Link>
+      </div>
 
-      <img id="navBarLogo" src="logo.webp" />
-
-
-      <img id="navBarMenuIcon" src="three.svg"/>
-      <Link to="/messages">MESSAGES</Link>
-      <Link to="/feedback">FEEDBACK</Link>
+      {menuOpen && (
+        <div id="sideBarOpen">
+        <img
+          id="navBarMenuIcon"
+          src="three.svg"
+          alt="Menu Icon"
+          onClick={() => menuClicked()}
+        />
+        </div>
+      )}
     </div>
   );
 };

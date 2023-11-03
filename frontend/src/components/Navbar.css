@@ -22,4 +22,12 @@
     top:6px;
     position:absolute;
   }
+  #sideBarOpen{
+    position:absolute;
+    left:0;
+    top:0;
+    width:20%;
+    height:100%;
+    background-color:rgb(28,117,188);
+  }
   
