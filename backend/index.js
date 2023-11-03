@@ -18,7 +18,8 @@ app.use(cookieParser());
 app.use(cors());
 
 // Routes
-app.use("/", require("./routes/userRoutes"));
+// app.use("/", require("./routes/userRoutes"));
+app.use("/api", require("./routes/messageRoutes"));
 
 // Port
 const port = process.env.PORT;
