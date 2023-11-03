@@ -26,7 +26,7 @@ const SignUp = () => {
                   <input className="form-input" type="text" id="phoneNumber" placeholder="Phone Number"/>
             </div>
         </div>
-        <button type="submit" class="button">Register</button>
+        <div className="buttonDiv"><button type="submit" className="button">Register</button></div>
     </div>
 }
 
