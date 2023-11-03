@@ -17,7 +17,7 @@ app.use(cookieParser());
 app.use(cors());
 
 // Routes
-app.use('/', require('./routes/authRoutes'));
+app.use('/', require('./routes/userRoute.js'));
 
 // Port
 const port = process.env.PORT
