@@ -9,6 +9,8 @@ const Navbar = () => {
       <img id="navBarLogo" src="logo.webp" />
       <Link to="/messages">MESSAGES</Link>
       <Link to="/feedback">FEEDBACK</Link>
+      <Link to="/signUp">SIGN UP</Link>
+      <Link to="/signIn">SIGN IN</Link>
     </div>
   );
 };
