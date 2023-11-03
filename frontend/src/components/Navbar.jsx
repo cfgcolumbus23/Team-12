@@ -1,5 +1,6 @@
 import React from 'react'
 import "./Navbar.css"
+import {Link} from "react-router-dom"
 const Navbar = () => {
   return (
     <div id="navBarMain">
@@ -8,6 +9,7 @@ const Navbar = () => {
         </div>
 
         <img id = "navBarLogo" src = "logo.webp"/>
+        <Link to="/messages">MESSAGES</Link>
     </div>
   )
 }
