@@ -10,7 +10,10 @@
   #navBarMenuIcon{
     min-height:40px;
     width:auto;
-    filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(87deg) brightness(119%) contrast(119%);
+    fill:white;
+    left:20px;
+    top:6px;
+    position:absolute;
   }
   #navBarLogo{
     max-height:50px;

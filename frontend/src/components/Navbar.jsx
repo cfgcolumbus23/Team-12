@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div id="navBarMain">
-      <div id="navBarIcon">ICON THING</div>
 
       <img id="navBarLogo" src="logo.webp" />
+
+
+      <img id="navBarMenuIcon" src="three.svg"/>
       <Link to="/messages">MESSAGES</Link>
       <Link to="/feedback">FEEDBACK</Link>
       <Link to="/signUp">SIGN UP</Link>
