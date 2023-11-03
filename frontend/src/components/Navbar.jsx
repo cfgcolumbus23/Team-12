@@ -1,6 +1,6 @@
 import React from "react";
 import "./Navbar.css";
-import { Link, useHistory  } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 const Navbar = () => {
     //const history = useHistory(); // Initialize the useHistory hook
