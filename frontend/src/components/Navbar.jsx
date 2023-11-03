@@ -1,14 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
-
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  function menuClicked() {
-    setMenuOpen(!menuOpen);
-  }
-
   return (
     <div>
       <div id="navBarMain">
@@ -21,6 +14,8 @@ const Navbar = () => {
         />
         <Link to="/messages">MESSAGES</Link>
         <Link to="/feedback">FEEDBACK</Link>
+        <Link to="/signUp">SIGN UP</Link>
+        <Link to="/signIn">SIGN IN</Link>
       </div>
 
       {menuOpen && (

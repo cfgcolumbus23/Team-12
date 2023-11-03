@@ -4,6 +4,8 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import Messaging from "./private_messaging.jsx";
 import Feedback from "./feedback.jsx";
+import SignUp from "./components/SignUp.jsx";
+import SignIn from "./components/login.jsx";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -12,6 +14,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Route path="/" element={<App />}></Route>
       <Route path="/messages" element={<Messaging />}></Route>
       <Route path="/feedback" element={<Feedback />}></Route>
+      <Route path="/signIn" element={<SignIn />}></Route>
+      <Route path="/signUp" element={<SignUp />}></Route>
     </Routes>
   </BrowserRouter>
 );
