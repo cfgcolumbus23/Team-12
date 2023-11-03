@@ -26,6 +26,13 @@ exports.sendMessage = async (req, res) => {
     await newMessage.save();
     res.status(201).send("Message sent successfully");
   } catch (error) {
-    res.status(500).send("Error sending message");
+    if (
+      error.name === "CastError" &&
+      (error.path === "senderId" || error.path === "receiverId")
+    ) {
+      return res.status(400).send("Invalid senderId or receiverId format.");
+    }
+    console.error(error);
+    res.status(500).send(`Error sending message: ${error.message}`);
   }
 };
