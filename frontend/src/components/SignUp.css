@@ -1,5 +1,5 @@
 body{
-    background: #bdc3c7;  
+    background: white;
 }
 
 .form{
@@ -7,6 +7,7 @@ body{
     width: 550px;
     margin: 20px auto;
     padding: 20px;
+    background-color: lightgray;
 }
 
 .form-input-sections{
@@ -26,6 +27,6 @@ body{
     width: 60%;
 }
 
-.footer{
+.buttonDiv{
     text-align: center;
 }
