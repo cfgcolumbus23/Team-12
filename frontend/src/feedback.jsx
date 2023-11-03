@@ -1,73 +1,91 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
+import React, { useState } from "react";
 import "./feedback.css";
 
-function contactForm() {
+const Feedback = () => {
   const [formData, setFormData] = useState({
-    name: "",
+    preferredName: "",
+    id: "",
     email: "",
-    message: "",
+    comments: "",
   });
 
-  const handleChange = (e) => {
+  const handleInput = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData({ ...formData, [name]: value }); //  copy w/ value updated
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    // You can add your code to handle form submission here
-    // For this example, we'll simply log the form data
-    console.log(formData);
+    e.preventDefault(); // prevents refresh
   };
 
   return (
-    <div>
-      <h2>Contact Me</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Name</label>
+    <div className="form">
+      <div className="form-input-sections">
+        <div className="preferredName">
+          <label className="form-label" htmlFor="preferredName">
+            Preferred Name
+          </label>
           <input
+            className="form-input"
             type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
+            id="preferredName"
+            name="preferredName"
+            value={formData.preferredName}
+            onChange={handleInput}
+            placeholder="Preferred Name"
             required
           />
         </div>
-
-        <div>
-          <label htmlFor="email">Email</label>
+        <div className="id">
+          <label className="form-label" htmlFor="id">
+            Employee ID
+          </label>
           <input
+            className="form-input"
+            type="text"
+            id="id"
+            name="id"
+            value={formData.id}
+            onChange={handleInput}
+            placeholder="Employee ID"
+            required
+          />
+        </div>
+        <div className="email">
+          <label className="form-label" htmlFor="email">
+            Email
+          </label>
+          <input
+            className="form-input"
             type="email"
             id="email"
             name="email"
             value={formData.email}
-            onChange={handleChange}
+            onChange={handleInput}
+            placeholder="Email"
             required
           />
         </div>
-
-        <div>
-          <label htmlFor="message">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
+        <div className="comment">
+          <label className="form-label" htmlFor="Comments">
+            How can we help you?
+          </label>
+          <input
+            className="form-input"
+            type="text"
+            id="comment"
+            name="comment"
+            value={formData.Comments}
+            onChange={handleInput}
+            placeholder="Comments"
           />
         </div>
-
-        <div>
-          <button type="submit">Submit</button>
-        </div>
-      </form>
+      </div>
+      <button type="submit" className="button" onClick={handleSubmit}>
+        Submit
+      </button>
     </div>
   );
-}
+};
 
-export default contactForm;
+export default Feedback;
