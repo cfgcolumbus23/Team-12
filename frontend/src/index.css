@@ -1,6 +1,13 @@
 @font-face {
   font-family: 'Geologica-medium';
-  src: local('Geologica-medium'), url(.) format('woff');
+  src: local('Geologica-medium'), url(../public/Geologica-Medium.ttf) format('woff');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+}
+
+@font-face {
+  font-family: 'Geologica-extrabold';
+  src: local('Geologica-extrabold'), url(../public/Geologica-ExtraBold.ttf) format('woff');
   /* other formats include: 'woff2', 'truetype, 'opentype',
                             'embedded-opentype', and 'svg' */
 }

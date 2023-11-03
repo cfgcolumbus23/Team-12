@@ -1,12 +1,17 @@
 import React from "react";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory  } from "react-router-dom";
 import { useState } from "react";
 const Navbar = () => {
+    //const history = useHistory(); // Initialize the useHistory hook
     const [menuOpen,setMenuOpen] = useState(false);
     function menuClicked(){
         setMenuOpen(!menuOpen)
     }
+    function handleMenuItemClick(path) {
+        history.push(path); // Use history.push to navigate to the specified path
+        setMenuOpen(false); // Close the menu after navigating
+      }
   return (
     <div>
       <div id="navBarMain">
@@ -32,7 +37,7 @@ const Navbar = () => {
           onClick={() => menuClicked()}
         />
         <div id = "sideMenuItemContainers">
-            <div className = "sideMenuItem" id = "sideMenuItem1">
+            <div className = "sideMenuItem" id = "sideMenuItem1" onClick = {()=>handleMenuItemClick("/signup")}>
                 test1
             </div>
             <div className = "sideMenuItem" id = "sideMenuItem2">
