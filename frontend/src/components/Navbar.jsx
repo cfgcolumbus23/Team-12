@@ -4,9 +4,7 @@ import {Link} from "react-router-dom"
 const Navbar = () => {
   return (
     <div id="navBarMain">
-        <div id = "navBarIcon">
-            ICON THING
-        </div>
+        <img src = "three.svg" id = "navBarMenuIcon"/>
 
         <img id = "navBarLogo" src = "logo.webp"/>
         <Link to="/messages">MESSAGES</Link>
