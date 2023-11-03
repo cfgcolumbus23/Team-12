@@ -26,6 +26,10 @@ const Navbar = () => {
         <Link to="/feedback">FEEDBACK</Link>
         <Link to="/signUp">SIGN UP</Link>
         <Link to="/signIn">SIGN IN</Link>
+        <div id = "navBarProfilePicture">profile picture</div>
+
+
+
       </div>
 
       {menuOpen && (
@@ -38,19 +42,24 @@ const Navbar = () => {
         />
         <div id = "sideMenuItemContainers">
             <div className = "sideMenuItem" id = "sideMenuItem1" onClick = {()=>handleMenuItemClick("/")}>
-                Home
+                <h1 className = "sideMenuItemText">Home</h1>
+                <img className = "icon" src="home.svg"/>
             </div>
             <div className = "sideMenuItem" id = "sideMenuItem2" onClick = {()=>handleMenuItemClick("/")}>
-                Newsletter
+                <h1 className = "sideMenuItemText">Newsletter</h1>
+                <img className = "icon" src="news.svg"/>
             </div>
             <div className = "sideMenuItem" id = "sideMenuItem3" onClick = {()=>handleMenuItemClick("/")}>
-                Courses
+                <h1 className = "sideMenuItemText">Courses</h1>
+                <img className = "icon" src="board.svg"/>
             </div>
             <div className = "sideMenuItem" id = "sideMenuItem5" onClick = {()=>handleMenuItemClick("/messages")}>
-                Messages
+                <h1 className = "sideMenuItemText">Messages</h1>
+                <img className = "icon" src="messages.svg"/>
             </div>
             <div className = "sideMenuItem" id = "sideMenuItem4"onClick = {()=>handleMenuItemClick("/feedback")}>
-                Feedback
+                <h1 className = "sideMenuItemText">Feedback</h1>
+                <img className = "icon" src="notepad.svg"/>
             </div>
         </div>
 

@@ -6,6 +6,8 @@
     height:60px;
     left:0;
     top:0;
+    overflow-x:hidden;
+    overflow-y:hidden;
   }
   #navBarMenuIcon{
     min-height:40px;
@@ -29,6 +31,8 @@
     width:20%;
     height:100%;
     background-color:rgb(28,117,188);
+    overflow-x:hidden;
+    overflow-y:hidden;
 }
 #sideMenuItemContainers{
     position:relative;
@@ -44,16 +48,32 @@
     font-size:20px;
     padding-top:5px;
     
-    border-color:black;
+    border-color:rgb(10, 53, 87);
     border-width:1px;
     border-bottom-style:solid;
 }
+.sideMenuItemText{
+    font-family: "geologica-extrabold";
+    color:white;
+    font-size:20px;
+    margin-left:5px;
+}
 .sideMenuItem:hover{
-    background-color:white;
+    background-color:rgb(10, 53, 87);
     transition:0.4s;
 
 }
 #sideMenuItem1{
     border-top-style:solid;
 }
+#navBarProfilePicture{
+    left:90%;
+    position:absolute;
+}
   
+.icon{
+    height:40px;
+    width:auto;
+    margin-left:50%;
+    margin-top:-20%;
+}
