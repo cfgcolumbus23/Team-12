@@ -1,11 +1,19 @@
 #navBarMain {
-    background-color: #333; /* Set the background color */
+    background-color: rgb(28,117,188); /* Set the background color */
     color: #fff; /* Set the text color */
     width:100%;
     position:absolute;
     height:60px;
     left:0;
     top:0;
+  }
+  #navBarMenuIcon{
+    min-height:40px;
+    width:auto;
+    fill:white;
+    left:20px;
+    top:6px;
+    position:absolute;
   }
   #navBarLogo{
     max-height:50px;
@@ -14,4 +22,19 @@
     top:6px;
     position:absolute;
   }
+  #sideBarOpen{
+    position:absolute;
+    left:0;
+    top:0;
+    width:20%;
+    height:100%;
+    background-color:rgb(28,117,188);
+}
+  .sideMenuItem{
+    height:75px;
+    width:100%;
+    background-color:black;
+    margin-top:15%;
+    gap:10px;
+}
   
