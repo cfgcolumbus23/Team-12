@@ -2,10 +2,29 @@ const Message = require("../models/messageModel");
 
 exports.directMessage = async (req, res) => {
   try {
-    const messages = await Message.find();
+    const { senderId: user1Id, receiverId: user2Id } = req.body;
+    console.log("USERID", req.body);
+    if (!user1Id || !user2Id) {
+      return res.status(400).send("Both user IDs are required.");
+    }
+
+    const messages = await Message.find({
+      $or: [
+        { senderId: user1Id, receiverId: user2Id },
+        { senderId: user2Id, receiverId: user1Id },
+      ],
+    }).sort("timestamp"); // Sorting by timestamp to get messages in chronological order
+
     res.status(200).json(messages);
   } catch (error) {
-    res.status(500).send("Error fetching messages");
+    if (
+      error.name === "CastError" &&
+      (error.path === "senderId" || error.path === "receiverId")
+    ) {
+      return res.status(400).send("Invalid user ID format.");
+    }
+    console.error(error);
+    res.status(500).send(`Error fetching messages: ${error.message}`);
   }
 };
 

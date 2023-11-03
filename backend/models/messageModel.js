@@ -3,12 +3,12 @@ const mongoose = require("mongoose");
 //TODO: Change mongost scheme based on where the user information is being saved
 const messageSchema = new mongoose.Schema({
   senderId: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: String,
     ref: "User",
     required: true,
   },
   receiverId: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: String,
     ref: "User",
     required: true,
   },
