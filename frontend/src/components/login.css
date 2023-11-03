@@ -1,10 +1,10 @@
 body{
-    background: #bdc3c7;  
+    background: white;  
 }
 
 .form{
-    border-radius: 5px;
-    width: 550px;
+    border-radius: 10px;
+    width: 500px;
     margin: 20px auto;
     padding: 20px;
 }
@@ -15,7 +15,7 @@ body{
 }
 
 .form-input-sections > *{
-    padding: 5px;
+    padding: 10px;
 }
 
 .form__label{
@@ -26,6 +26,6 @@ body{
     width: 60%;
 }
 
-.footer{
+.buttonDiv{
     text-align: center;
 }
