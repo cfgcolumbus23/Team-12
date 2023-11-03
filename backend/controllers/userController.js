@@ -1,8 +1,7 @@
 const User = require('../models/user.js');
 
-const registerUser = async (req, res, next) => {
+const registerUser = async (req, res) => {
     const {name, email, password, employeeID} = req.body;
-
 
     try {
         // Check if name exists
@@ -35,6 +34,17 @@ const registerUser = async (req, res, next) => {
         console.log(error);
     }
 
+}
+
+const loginUser = async (req, res) => {
+    const {employeeID, password} = req.body;
+    // Check if employee id exists
+    const user = await User.findOne({ employeeID });
+    if (!user) {
+        return res.json({
+            error: "No user found"
+        });
+    }
 }
 
 module.exports = {
