@@ -19,7 +19,7 @@ app.use(cors());
 
 // Routes
 // app.use("/", require("./routes/userRoutes"));
-app.use("/api", require("./routes/messageRoutes"));
+app.use("/message", require("./routes/messageRoutes"));
 
 // Port
 const port = process.env.PORT;

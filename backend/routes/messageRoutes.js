@@ -6,6 +6,6 @@ const {
 const router = express.Router();
 
 // Routes for messages
-router.get("/message", directMessage);
+router.get("/message_receive", directMessage);
 router.post("/send", sendMessage);
 module.exports = router;
