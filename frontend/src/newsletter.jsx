@@ -34,6 +34,12 @@ function newsletter() {
       <div className="admin-panel">
         <button onClick={() => setShowForm(true)}>Add New Post</button> {/* Button to show form */}
       </div>
+
+      <div id = "postContainer">
+        
+      </div>
+
+
       {showForm && <PostForm closeForm={() => setShowForm(false)} />} {/* Conditionally render the form */}
       <div className="posts-container">
         {posts.map((post) => (
