@@ -3,11 +3,13 @@ import "./private_messaging.css";
 import Navbar from "./components/Navbar";
 
 function App() {
+  // State variables to manage messages, user input, and contacts
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
   const [showContacts, setShowContacts] = useState(false);
   const [selectedContact, setSelectedContact] = useState("");
   const [searchValue, setSearchValue] = useState("");
+  // Dummy contact data for example
   const contacts = [
     "Tyler",
     "Sophie",
@@ -17,20 +19,25 @@ function App() {
     "Mithra",
     "Reegan",
   ];
+
+  // State for error messages
   const [errorMessage, setErrorMessage] = useState("");
 
+  //Function to handle sending a message
   const handleSendMessage = () => {
     if (selectedContact) {
       if (message) {
+        // Add a sent message to the conversation
         setMessages([...messages, { text: message, direction: "sent" }]);
-        setMessage("");
+        setMessage(""); // Clear the input field
       }
-      setErrorMessage("");
+      setErrorMessage(""); // Clear any error messages
     } else {
       setErrorMessage("Please select a contact before sending.");
     }
   };
 
+  // Function to handle receiving a message
   const handleReceiveMessage = () => {
     const receivedMessage = "Received message example";
     setMessages([
@@ -39,21 +46,25 @@ function App() {
     ]);
   };
 
+  //Function to toggle the contacts lists visibility
   const toggleContacts = () => {
     setShowContacts(!showContacts);
   };
 
+  // Function to handle contact search
   const handleContactSearch = (e) => {
     setSearchValue(e.target.value);
   };
 
+  // Function to handle contact selection
   const handleContactSelect = (contact) => {
     setSelectedContact(contact);
     setSearchValue("");
-    setMessages([]);
-    setErrorMessage("");
+    setMessages([]); // Clear any previous error messages
+    setErrorMessage(""); // Clear any previous error message
   };
 
+  // Filter contacts based on search input
   const filteredContacts = contacts.filter((contact) =>
     contact.toLowerCase().includes(searchValue.toLowerCase())
   );
