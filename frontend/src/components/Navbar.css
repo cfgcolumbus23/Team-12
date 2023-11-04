@@ -37,6 +37,10 @@
   left:48%;
   top:6px;
   position:absolute;
+  transition: transform 0.5s;
+}
+#navBarLogo:hover{
+  transform: scale(1.05);
 }
 #sideBarOpen{
   position:absolute;
@@ -139,6 +143,14 @@ transform: translateX(0);
 h2 {
 color: #fff;
 margin-top: 10px;
+}
+
+.menu-and-bars-button {
+  transition: transform 0.5s;
+}
+
+.menu-and-bars-button:hover {
+  transform: scale(1.05);
 }
 
 

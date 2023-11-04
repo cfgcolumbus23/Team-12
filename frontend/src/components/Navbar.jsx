@@ -42,14 +42,16 @@ const Navbar = () => {
   return (
     <div>
       <div id="navBarMain">
-        <img id="navBarLogo" src="logo.webp" alt="Logo" />
+        <img id="navBarLogo" src="logo.webp" alt="Logo" onClick={() => handleMenuItemClick("/")} />
+        <div id="menu-and-bars-button" onClick={() => menuClicked()}>
           <img
             id="navBarMenuIcon"
             src="three.svg"
             alt="Menu Icon"
-            onClick={() => menuClicked()} //this fcn toggles the menuOpen state
           />
           <div id = "menuLabel">Menu</div>
+        </div>
+          
 
         {renderEitherLoginRegisterOrProfilePicture()}
       </div>

@@ -13,6 +13,7 @@
   .profile-header-title {
     font-size: 30px;
     color: #333;
+    background-color: transparent;
   }
   
   .streak-info, .team-points, .course-progress {

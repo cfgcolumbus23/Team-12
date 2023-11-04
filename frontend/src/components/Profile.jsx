@@ -3,9 +3,9 @@ import "./Profile.css";
 import Navbar from "./Navbar.jsx";
 
 // sample info for now
-const name = "Name";
-const streak = 5;
-const teamPoints = 100;
+const name = "Alexa";
+const streak = 15;
+const teamPoints = 2310;
 const progress = 85;
 
 const Profile = () => {
@@ -20,7 +20,7 @@ const Profile = () => {
         <p className="info-value">{streak} days</p>
       </div>
       <div className="team-points">
-        <p className="info-label">Team Points:</p>
+        <p className="info-label">Store Points:</p>
         <p className="info-value">{teamPoints} points</p>
       </div>
       <div className="course-progress">
