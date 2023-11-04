@@ -15,18 +15,23 @@ const SignIn = () => {
   };
 
   const handleSignIn = () => {
+    setIsFormValid(true);
+    
     if (employeeID.trim() === "") {
       setError("Employee ID is required");
+      setIsFormValid(false);
       return;
     }
 
     if (password.trim() === "") {
       setError("Password is required");
+      setIsFormValid(false);
       return;
     }
 
     if (!isNumeric(employeeID)) {
       setError("Employee ID must contain only numbers");
+      setIsFormValid(false);
       return;
     }
 
@@ -71,11 +76,9 @@ const SignIn = () => {
       </div>
       {error && <div className="error-message">{error}</div>}
       <div className="buttonDiv">
-        <Link to="/profile">
-            <button type="button" className="button" onClick={handleSignIn}>
-            Sign In
-            </button>
-        </Link>
+      <Link to="/profile">
+        <button>Sign In</button>
+      </Link>
 
       </div>
     </div>
