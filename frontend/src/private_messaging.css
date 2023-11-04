@@ -9,7 +9,7 @@ body {
     background-color: #f5f5f5;
 }
 .message-body {
-    margin-top: 60px;
+    margin-top: 40px;
     height: 75%;
     display: flex;
     flex-direction: column;
@@ -34,6 +34,8 @@ body {
     gap: 7px;
     justify-content: center;
     min-width: 213px;
+    height: 10vh;
+    width: 50vw;
 }
 .scrollable-container {
     max-height: 75%;
@@ -42,9 +44,11 @@ body {
     height: 70vh;
     display: flex;
     flex-direction: column;
+    border: solid black 1px;
+    width: 50vw;
 }
 .message-div {
-    border: solid black 1px;
+
     width: 50vw;
 }
 .sentMessage {
@@ -94,8 +98,9 @@ body {
   top: 0;
   height: 75vh;
   width: 200px;
-  border: 1px solid black;
   margin-top: 60px;
+  display: flex;
+  flex-direction: column;
 }
 .contactButton {
 	position: absolute;

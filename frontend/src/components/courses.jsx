@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar'
 import "./courses.css"
+import { useState } from 'react'
 const Training = () => {
     const [popUpOpen,setPopUpOpen] = useState(false)
     const [popUpCategory,setPopUpCategory] = useState("basic")
