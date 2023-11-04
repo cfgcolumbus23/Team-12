@@ -49,6 +49,14 @@
 }
 #popUpHeader{
     background-color:black;
+    border-top-right-radius:12px;
+    border-top-left-radius:12px;
     width:100%;
-    height:20px;
+    height:10%;
+    color:white;
+    font-size:20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "geologica-extrabold";
 }
