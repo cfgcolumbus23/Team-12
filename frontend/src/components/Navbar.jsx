@@ -4,7 +4,9 @@ import { Link, useNavigate   } from "react-router-dom";
 import { useState } from "react";
 const Navbar = () => {
     const navigate = useNavigate(); // Initialize the useHistory hook
-    const [menuOpen,setMenuOpen] = useState(false);
+    const [menuOpen,setMenuOpen] = useState(false)
+    const [profileMenuOpen,setProfileMenuOpen] = useState(false)
+    const [isLoggedIn,setIsLoggedIn] = useState(false)
     function menuClicked(){
         setMenuOpen(!menuOpen)
     }
@@ -12,6 +14,28 @@ const Navbar = () => {
         navigate(path); // Use history.push to navigate to the specified path
         setMenuOpen(false); // Close the menu after navigating
       }
+    function renderEitherLoginRegisterOrProfilePicture(){
+        // render conditionally
+        // if user is logged in, show profile picture, if not show login/register clickables
+        if(!isLoggedIn){
+            console.log("NOT LOGGED IN")
+            return(
+                <div id ="loginRegisterContainer">
+                    <div className = "loginRegisterItem">Login</div>
+                    <div className = "loginRegisterItem">Register</div>
+                </div>
+            )
+        }
+        else{
+            return(
+                <img id = "navBarProfilePicture" src="user.svg"/>
+            )
+        }
+
+    }
+    function handleProfileMenuOpen(){
+        // show whether user is logged in or not
+    }
   return (
     <div>
       <div id="navBarMain">
@@ -26,12 +50,10 @@ const Navbar = () => {
         <Link to="/feedback">FEEDBACK</Link>
         <Link to="/signUp">SIGN UP</Link>
         <Link to="/signIn">SIGN IN</Link>
-        <img id = "navBarProfilePicture" src="user.svg"/>
 
-
+        {renderEitherLoginRegisterOrProfilePicture()}
 
       </div>
-
       {menuOpen && (
         <div id="sideBarOpen">
         <img
