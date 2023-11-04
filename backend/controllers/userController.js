@@ -76,7 +76,32 @@ const loginUser = async (req, res) => {
     }
 }
 
+const updateProgress = async (req, res) => {
+    try {
+        const {employeeID, progress} = req.body;
+        // Check if user entered employeeID and password
+        if (!employeeID) {
+            return res.json({
+                error: "Employee ID is required"
+            });
+        }
+        // Check if employee id exists
+        const user = await User.findOne({ employeeID });
+        if (!user) {
+            return res.json({
+                error: "No user found"
+            });
+        }
+    
+        user.progress = progress;
+        await user.save();
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 module.exports = {
     registerUser,
     loginUser,
+    updateProgress
 }
