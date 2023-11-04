@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import "./leaderboard.css";
+<<<<<<< HEAD
+import Navbar from './components/Navbar';
+
+=======
 import Navbar from "./components/Navbar";
+>>>>>>> 9b7171e94a7ee8113874e6b2884b5d3e60030825
 const data = [
   {
     name: "2550 N High Street",

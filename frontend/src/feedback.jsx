@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./feedback.css";
+import Navbar from './components/Navbar.jsx';
 
 const Feedback = () => {
   const [formData, setFormData] = useState({
@@ -40,6 +41,7 @@ const Feedback = () => {
 
   return (
     <div class="form">
+      <Navbar />
       <h2> Contact Us </h2>
       <h3> Include Name, ID, Email for personal concerns or requests </h3>
       <div className="form-input-sections">
