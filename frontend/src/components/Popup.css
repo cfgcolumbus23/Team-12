@@ -71,3 +71,13 @@
     justify-self: center;
     padding: 5px 0;
 }
+
+@media (max-width: 758px) {
+    .popup {
+        width: 80%;
+        max-height: 100px;
+        padding: 20px;
+        margin-top: 100px;
+        top: 40%;
+    }
+}
