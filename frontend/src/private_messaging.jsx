@@ -8,12 +8,18 @@ function App() {
   const [showContacts, setShowContacts] = useState(false);
   const [selectedContact, setSelectedContact] = useState('');
   const [searchValue, setSearchValue] = useState('');
-  const contacts = ['Contact 1', 'Contact 2', 'Contact 3', 'Contact 4'];
+  const contacts = ['Tyler', 'Sophie', 'Abdul', 'Arnnov', 'Alexa', 'Mythra', 'Reegan'];
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSendMessage = () => {
-    if (message) {
-      setMessages([...messages, { text: message, direction: 'sent' }]);
-      setMessage('');
+    if (selectedContact) {
+      if (message) {
+        setMessages([...messages, { text: message, direction: 'sent' }]);
+        setMessage('');
+      }
+      setErrorMessage(''); 
+    } else {
+      setErrorMessage('Please select a contact before sending.'); 
     }
   };
 
@@ -32,8 +38,9 @@ function App() {
 
   const handleContactSelect = (contact) => {
     setSelectedContact(contact);
-    setSearchValue(''); // Clear the search bar after selection
-    setMessages([]); // Clear messages when a new contact is selected
+    setSearchValue('');
+    setMessages([]);
+    setErrorMessage(''); 
   };
 
   const filteredContacts = contacts.filter((contact) =>
@@ -50,6 +57,7 @@ function App() {
       <body className="message-body">
         <div className="app-container">
           <Navbar />
+          <button className="showContacts" onClick={toggleContacts}>Show Contacts</button>
           <div className="centered message-div">
             <div id="allMessages" className="scrollable-container message-div">
               {messages.map((msg, index) => (
@@ -60,8 +68,9 @@ function App() {
                   {msg.text}
                 </div>
               ))}
+              {errorMessage && <div className="error-message">{errorMessage}</div>}
             </div>
-            <div className="send-div message-div">
+            <div className="send-div">
               <input
                 type="text"
                 id="sendMessage"
@@ -74,18 +83,11 @@ function App() {
             </div>
           </div>
           <div>
-            <button onClick={toggleContacts}>Toggle Contacts</button>
+            
           </div>
           {showContacts && (
-            
             <div className="contacts">
-              <button onClick={toggleContacts}>Toggle Contacts</button>
-              <input
-                type="text"
-                placeholder="Search for contacts"
-                value={searchValue}
-                onChange={handleContactSearch}
-              />
+              <button onClick={toggleContacts}>Hide Contacts</button>
               <datalist id="contactsList">
                 {filteredContacts.map((contact, index) => (
                   <option key={index} value={contact} />
@@ -95,7 +97,7 @@ function App() {
                 list="contactsList"
                 value={selectedContact}
                 onChange={(e) => handleContactSelect(e.target.value)}
-                placeholder="Select a contact"
+                placeholder="Search for a contact"
               />
             </div>
           )}

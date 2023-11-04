@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import './login.css';
 
 const SignIn = () => {
-
     return <div className="form">
         <div className="form-input-sections">
             <div className="id">
