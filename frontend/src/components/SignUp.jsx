@@ -49,6 +49,7 @@ const SignUp = () => {
 
   return (
     <div className="form">
+      <Navbar /> 
       <div className="form-input-sections">
         <div className="preferredName">
           <label className="form-label" htmlFor="preferredName">
