@@ -16,6 +16,23 @@
   
   /* App.css updates for a professional Add New Post button */
 
+#submissionContainer{
+  background-color:white;
+  position:absolute;
+  width:50%;
+  height:60%;
+  left:25%;
+  border-radius:20px;
+  border-color:gray;
+  border-style:solid;
+  border-width:1px;
+  padding:12px;
+}
+#submissionHeader{
+  font-family:'geologica-extrabold';
+  font-size:25px;
+}
+
 .admin-panel1 button {
     visibility: hidden;
     padding: 10px 25px; /* Slightly larger horizontal padding for a wider button */
