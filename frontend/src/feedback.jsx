@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./feedback.css";
-import Navbar from './components/Navbar.jsx';
+import Navbar from "./components/Navbar.jsx";
 
 const Feedback = () => {
   const [formData, setFormData] = useState({
@@ -30,6 +30,7 @@ const Feedback = () => {
       ...errors,
       [name]: is_Valid ? "" : "Please enter valid input",
     });
+
     if (is_Valid) {
       setFormData({ ...formData, [name]: value }); //  copy w/ value updated
     }
