@@ -3,7 +3,7 @@ import "./SignUp.css";
 import Navbar from "./Navbar.jsx";
 import { Link } from 'react-router-dom';
 
-const SignUp = () => {
+export default function SignUp() {
   const [preferredName, setPreferredName] = useState("");
   const [employeeID, setEmployeeID] = useState("");
   const [password, setPassword] = useState("");
@@ -134,4 +134,43 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+
+export function SendSms() {
+      const [phoneNumber, setPhoneNumber] = useState('');
+      const [message, setMessage] = useState('');
+    
+      const sendSms = () => {
+        if (phoneNumber.trim() === '' || message.trim() === '') {
+          alert('Please fill in both phone number and message.');
+          return;
+        }
+    
+        const email = `yourPhoneNumber@sms-gateway-provider.com`; // Replace with the actual email format
+        window.location.href = `mailto:${email}?body=${encodeURIComponent(message)}`;
+      };
+    
+      return (
+        <div>
+          <h1>Send SMS</h1>
+          <div>
+            <label htmlFor="phoneNumber">Phone Number</label>
+            <input
+              type="text"
+              id="phoneNumber"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+            />
+          </div>
+          <div>
+            <label htmlFor="message">Message</label>
+            <input
+              type="text"
+              id="message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
+          </div>
+          <button onClick={sendSms}>Send SMS</button>
+        </div>
+      );
+    }
