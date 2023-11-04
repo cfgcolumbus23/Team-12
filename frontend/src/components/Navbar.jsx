@@ -42,7 +42,9 @@ const Navbar = () => {
   return (
     <div>
       <div id="navBarMain">
+        <a href="http://localhost:5173/">
         <img id="navBarLogo" src="logo.webp" alt="Logo" />
+        </a>
           <img
             id="navBarMenuIcon"
             src="three.svg"
