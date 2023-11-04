@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import "./login.css";
 import Navbar from "./Navbar.jsx";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const SignIn = () => {
-
   const [employeeID, setEmployeeID] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -33,7 +32,6 @@ const SignIn = () => {
     // If validation passes, you can proceed with the sign-in logic here
     // For now, we'll just show an alert with the input values
     // alert(`Employee ID: ${employeeID}\nPassword: ${password}`);
-
   };
 
   return (
@@ -72,11 +70,10 @@ const SignIn = () => {
       {error && <div className="error-message">{error}</div>}
       <div className="buttonDiv">
         <Link to="/profile">
-            <button type="button" className="button" onClick={handleSignIn}>
+          <button type="button" className="button" onClick={handleSignIn}>
             Sign In
-            </button>
+          </button>
         </Link>
-
       </div>
     </div>
   );
