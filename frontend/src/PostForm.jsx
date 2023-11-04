@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './PostForm.css'; // Make sure the path is correct
+import axios from 'axios';
 
 function PostForm({ closeForm }) {
   // State variables to manage the form fields
@@ -8,6 +9,7 @@ function PostForm({ closeForm }) {
   const [image, setImage] = useState(null);
 
   // Function to handle form submission
+  /*
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -16,14 +18,14 @@ function PostForm({ closeForm }) {
     if (image) {
       formData.append('image', image);
     }
-
     try {
       // Send a POST request to the API endpoint
-      const response = await fetch('http://localhost:8000/api/post', {
+      const response = await fetch('http://localhost:8000/feed/post', {
         method: 'POST',
-        body: formData,
+        //body: formData,
+        req:formData
       });
-
+      console.log("FORM DATA:", formData)
       if (!response.ok) {
         throw new Error('Network response was not ok ' + response.statusText);
       }
@@ -31,18 +33,32 @@ function PostForm({ closeForm }) {
       // Close the form and refresh posts
       closeForm();
       // Here you would add logic to refresh the posts list if needed
-
+      
       const newPost = await response.json();
       console.log('Success:', newPost); // Log the new post data
     } catch (error) {
       console.error('Error:', error); //Log any errors
     }
   };
+  */
 
+function submitFunction(){
+  axios
+  .post("http://localhost:8000/feed/post", {
+    title: title,
+    content: content,
+  })
+  .then((response) => {
+    console.log("Response:", response.data);
+  })
+  .catch((error) => {
+    console.error("Error sending message:", error);
+  });
+}
   return (
     <div className="post-form-modal">
       <div className="post-form-container">
-        <form onSubmit={handleSubmit} className="post-form">
+        <form onSubmit={submitFunction} className="post-form">
           <label htmlFor="title">Title</label>
           <input
             type="text"
