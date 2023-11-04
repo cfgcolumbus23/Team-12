@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./SignUp.css";
+import sendSMS from "./sendSMS.jsx";
 import Navbar from "./Navbar.jsx";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-export default function SignUp() {
+const SignUp = () => {
   const [preferredName, setPreferredName] = useState("");
   const [employeeID, setEmployeeID] = useState("");
   const [password, setPassword] = useState("");
@@ -52,7 +53,7 @@ export default function SignUp() {
 
   return (
     <div className="form">
-      <Navbar /> 
+      <Navbar />
       <div className="form-input-sections">
         <Navbar />
         <h2> Register </h2>
@@ -125,52 +126,13 @@ export default function SignUp() {
       {error && <div className="error-message">{error}</div>}
       <div className="buttonDiv">
         <Link to="/profile">
-            <button type="button" className="button" onClick={handleRegister}>
+          <button type="button" className="button" onClick={handleRegister}>
             Register
-            </button>
+          </button>
         </Link>
       </div>
+      <sendSMS phoneNumber={phoneNumber} />
     </div>
   );
 };
-
-
-export function SendSms() {
-      const [phoneNumber, setPhoneNumber] = useState('');
-      const [message, setMessage] = useState('');
-    
-      const sendSms = () => {
-        if (phoneNumber.trim() === '' || message.trim() === '') {
-          alert('Please fill in both phone number and message.');
-          return;
-        }
-    
-        const email = `yourPhoneNumber@sms-gateway-provider.com`; // Replace with the actual email format
-        window.location.href = `mailto:${email}?body=${encodeURIComponent(message)}`;
-      };
-    
-      return (
-        <div>
-          <h1>Send SMS</h1>
-          <div>
-            <label htmlFor="phoneNumber">Phone Number</label>
-            <input
-              type="text"
-              id="phoneNumber"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-            />
-          </div>
-          <div>
-            <label htmlFor="message">Message</label>
-            <input
-              type="text"
-              id="message"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-            />
-          </div>
-          <button onClick={sendSms}>Send SMS</button>
-        </div>
-      );
-    }
+export default SignUp;
