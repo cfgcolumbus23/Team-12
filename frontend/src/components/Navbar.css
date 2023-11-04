@@ -104,6 +104,9 @@
     }
 
     .icon {
-        
+        height:20px;
+        width:auto;
+        margin-left:60%;
+        margin-top:-20%;
     }
 }

@@ -4,7 +4,6 @@ import './SignUp.css';
 const SignUp = () => {
     return <div className="form">
         <div className="form-input-sections">
-            {/* sections: preferred name, email, phone number (optional), employee id,  */}
             <div className="preferredName">
                   <label className="form-label" for="preferredName">Preferred Name</label>
                   <input className="form-input" type="text" id="preferredName" placeholder="Preferred Name"/>
