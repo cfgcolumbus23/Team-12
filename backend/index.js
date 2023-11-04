@@ -25,6 +25,7 @@ app.use(cors());
 // Routes
 // app.use("/api", require("./routes/userRoutes"));
 app.use("/message", require("./routes/messageRoutes"));
+app.use("/feed", require("./controllers/FeedController"));
 
 // Port
 const port = process.env.PORT;
