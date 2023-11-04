@@ -78,7 +78,7 @@ transform: translateX(0);
   top:75px;
 }
 .sideMenuItem{
-  height:75px;
+  height:90px;
   width:130%; /* MADE CHANGE HERE */
 
   font-family: "geologica-extrabold";
@@ -86,9 +86,12 @@ transform: translateX(0);
   font-size:20px;
   padding-top:5px;
   
-  border-color:rgb(10, 53, 87);
+  border-color:rgb(28,117,188);
   border-width:1px;
   border-bottom-style:solid;
+  
+  text-align: left;
+  
 }
 .sideMenuItemText{
   font-family: "geologica-extrabold";
@@ -138,6 +141,8 @@ transform: translateX(0);
   width:auto;
   margin-left:80%;
   margin-top:-50%;
+  
+  
 }
 
 h2 {
