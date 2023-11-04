@@ -65,6 +65,7 @@ const loginUser = async (req, res) => {
         if (match) {
             console.log("Success");
             res.json("Success");
+            localStorage.setItem("userID", JSON.stringify(user.employeeID));
         } else {
             res.json({
                 error: "Wrong password"
