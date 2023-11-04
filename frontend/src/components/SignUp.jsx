@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./SignUp.css";
 import Navbar from "./Navbar.jsx";
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
   const [preferredName, setPreferredName] = useState("");
@@ -122,9 +123,11 @@ const SignUp = () => {
       </div>
       {error && <div className="error-message">{error}</div>}
       <div className="buttonDiv">
-        <button type="button" className="button" onClick={handleRegister}>
-          Register
-        </button>
+        <Link to="/profile">
+            <button type="button" className="button" onClick={handleRegister}>
+            Register
+            </button>
+        </Link>
       </div>
     </div>
   );
