@@ -29,11 +29,16 @@ function newsletter() {
   //   fetchPosts();
   // }, []);
 
+  useEffect(() => {
+    // Simulate button click by default when the page loads
+    setShowForm(true);
+  }, []);
+
   return (
     <>
       <Navbar />
       <Popup/>
-      <div className="admin-panel">
+      <div className="admin-panel1">
         <button onClick={() => setShowForm(true)}>Add New Post</button> {/* Button to show form */}
       </div>
       {showForm && <PostForm closeForm={() => setShowForm(false)} />} {/* Conditionally render the form */}
