@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
 import './SignUp.css';
-
+import Navbar from './Navbar.jsx';
+ 
 const SignUp = () => {
-    return <div className="form">
+    return <div>
+      <Navbar />
+      <div className="form">
         <div className="form-input-sections">
             <div className="preferredName">
                   <label className="form-label" for="preferredName">Preferred Name</label>
@@ -26,6 +29,7 @@ const SignUp = () => {
             </div>
         </div>
         <div className="buttonDiv"><button type="submit" className="button">Register</button></div>
+    </div>
     </div>
 }
 

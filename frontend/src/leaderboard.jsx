@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./leaderboard.css";
+import Navbar from './components/Navbar';
 
 const data = [
   {
@@ -54,6 +55,7 @@ const Leaderboard = () => {
 
   return (
     <div className="board">
+      <Navbar />
       <h1 className="leaderboard">Leaderboard</h1>
       <ul>
         <>

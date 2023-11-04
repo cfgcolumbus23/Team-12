@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import './login.css';
+import Navbar from './Navbar.jsx';
 
 const SignIn = () => {
     return <div className="form">
+        <Navbar />
         <div className="form-input-sections">
             <div className="id">
                   <label className="form-label" for="id">Employee ID</label>
