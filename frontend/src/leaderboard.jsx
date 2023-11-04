@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import "./leaderboard.css";
+<<<<<<< HEAD
 import Navbar from './components/Navbar';
 
+=======
+import Navbar from "./components/Navbar";
+<<<<<<< Updated upstream
+>>>>>>> d91e33fad1bab036f22f73af20097f70c824812b
+=======
+>>>>>>> 83717e0d81aa046bfebaaf1e3e8474902838f63d
+>>>>>>> Stashed changes
 const data = [
   {
     name: "2550 N High Street",
