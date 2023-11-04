@@ -105,4 +105,30 @@
   .post-form-container {
     animation: slideIn 0.3s ease-out forwards;
   }
-  
+  .post {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 5px;
+    border: solid 3px rgb(28,117,188);
+    width: 75vw;
+  }
+  .post h2 {
+    margin: 5px;
+  }
+  .post p {
+    margin: 5px;
+  }
+  .post img {
+    margin: 5px;
+    max-width: 50%;
+  }
+  .comment-button {
+    width: 175px; 
+    height: 30px;
+    font-size: 12px !important; 
+    padding: 0px !important;
+  }

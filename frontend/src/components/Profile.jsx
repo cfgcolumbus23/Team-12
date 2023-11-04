@@ -3,7 +3,7 @@ import "./Profile.css";
 import Navbar from "./Navbar.jsx";
 
 // sample info for now
-const name = "Name";
+const name = "John";
 const streak = 5;
 const teamPoints = 100;
 const progress = 85;
