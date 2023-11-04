@@ -11,8 +11,8 @@ function App() {
   const contacts = [
     "Tyler",
     "Sophie",
-    "Abdul",
-    "Arnnov",
+    "Abdel",
+    "Arnav",
     "Alexa",
     "Mithra",
     "Reegan",
