@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./leaderboard.css";
 
-import Navbar from './components/Navbar';
+import Navbar from "./components/Navbar";
 
 const data = [
+  // holds information for stores in Franklin County (potentially 20+)
   {
     name: "2550 N High Street",
     score: 1550,
@@ -37,31 +38,36 @@ const data = [
 ];
 
 const Leaderboard = () => {
-  const sortedData = [...data].sort((a, b) => b.score - a.score);
+  const sortedData = [...data].sort((a, b) => b.score - a.score); //sorting numbers in from highest to lowest --> ranking
   return (
     <div className="board">
       <Navbar />
       <h1 className="leaderboard">Leaderboard</h1>
       <ul>
         <>
-          {sortedData.map((value, index) => (
-            <div className="flex" key={index}>
-              <div className="item">
-                <span>{index + 1}</span>
-              </div>
-              <div className="item">
-                <img src={value.img} alt="" />
+          {sortedData.map(
+            (
+              value,
+              index //iterating through data to output each store w/ its associated values
+            ) => (
+              <div className="flex" key={index}>
+                <div className="item">
+                  <span>{index + 1}</span>
+                </div>
+                <div className="item">
+                  <img src={value.img} alt="" />
 
-                <div className="info">
-                  <h3 className="name text-dark">{value.name}</h3>
-                  <span>{value.location}</span>
+                  <div className="info">
+                    <h3 className="name text-dark">{value.name}</h3>
+                    <span>{value.location}</span>
+                  </div>
+                </div>
+                <div className="item">
+                  <span>{value.score}</span>
                 </div>
               </div>
-              <div className="item">
-                <span>{value.score}</span>
-              </div>
-            </div>
-          ))}
+            )
+          )}
         </>
       </ul>
     </div>
