@@ -1,35 +1,3 @@
-/* body{
-    background: white;  
-}
-
-.form{
-    border-radius: 10px;
-    width: 500px;
-    margin: 20px auto;
-    padding: 20px;
-}
-
-.form-input-sections{
-    text-align: left;
-    padding: 20px 10px;
-}
-
-.form-input-sections > *{
-    padding: 10px;
-}
-
-.form__label{
-    width: 40%;
-}
-
-.form_input{
-    width: 60%;
-}
-
-.buttonDiv{
-    text-align: center;
-} */
-
 /* Reset default margin and padding for all elements */
 * {
   margin: 0;
