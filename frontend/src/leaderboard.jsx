@@ -89,8 +89,8 @@ const Leaderboard = () => {
           All-Time
         </button>
       </div>
-
-      <Profiles Leaderboard={between(data, period)}></Profiles>
+{/* 
+      <Profiles Leaderboard={between(data, period)}></Profiles> */}
     </div>
   );
 };
