@@ -105,7 +105,7 @@ const Navbar = () => {
               onClick={() => handleMenuItemClick("/leaderboard")}
             >
               <h1 className="sideMenuItemText">Leaderboard</h1>
-              <img className="icon" src="messages.svg" />
+              <img className="icon" src="leaderboard.svg" />
             </div>
           </div>
         </div>
