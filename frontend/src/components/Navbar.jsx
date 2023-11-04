@@ -27,6 +27,9 @@ const Navbar = () => {
           <Link to="/signup" className="loginRegisterItem">
             Register
           </Link>
+          <Link to="/profile" className="loginRegisterItem">
+            Profile
+          </Link>
         </div>
       );
     } else {
@@ -95,6 +98,14 @@ const Navbar = () => {
             >
               <h1 className="sideMenuItemText">Feedback</h1>
               <img className="icon" src="notepad.svg" />
+            </div>
+            <div
+              className="sideMenuItem"
+              id="sideMenuItem5"
+              onClick={() => handleMenuItemClick("/leaderboard")}
+            >
+              <h1 className="sideMenuItemText">Leaderboard</h1>
+              <img className="icon" src="messages.svg" />
             </div>
           </div>
         </div>
