@@ -23,7 +23,7 @@ app.use(cookieParser());
 app.use(cors());
 
 // Routes
-// app.use("/api", require("./routes/userRoutes"));
+app.use("/api", require("./routes/userRoutes"));
 app.use("/message", require("./routes/messageRoutes"));
 app.use("/feed", require("./controllers/FeedController"));
 

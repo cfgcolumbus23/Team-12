@@ -10,9 +10,22 @@ function App() {
   const [selectedContact, setSelectedContact] = useState("");
   const [searchValue, setSearchValue] = useState("");
   const contacts = ["person1", "person2", "person3", "person4"];
+  const currentUser = "person1";
 
   const handleSendMessage = () => {
     if (message) {
+      axios
+        .post("http://localhost:8000/message/send", {
+          senderId: currentUser,
+          receiverId: selectedContact,
+          content: message,
+        })
+        .then((response) => {
+          console.log("Response:", response.data);
+        })
+        .catch((error) => {
+          console.error("Error sending message:", error);
+        });
       setMessages([...messages, { text: message, direction: "sent" }]);
       setMessage("");
     }
@@ -43,7 +56,6 @@ function App() {
 
   useEffect(() => {
     // Construct the URL with query parameters
-    const currentUser = "person1";
 
     const url = `http://localhost:8000/message/message_receive?senderId=${currentUser}&receiverId=${selectedContact}`;
 
@@ -119,7 +131,7 @@ function App() {
                 onChange={(e) => setMessage(e.target.value)}
               />
               <input type="submit" value="send" onClick={handleSendMessage} />
-              <button onClick={handleReceiveMessage}>receive</button>
+              {/* <button onClick={handleReceiveMessage}>receive</button> */}
             </div>
           </div>
           <div>
