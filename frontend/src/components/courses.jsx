@@ -29,12 +29,15 @@ const Training = () => {
         if(popUpOpen){
             // shows translucent background with popup showing information on clicked category
             return(
+                <>
+                <div id = "popUpCompleteButton" onClick = {() => console.log("CLICKED")}>Mark Complete</div>
                 <div id = "popUpBackground" onClick = {() => setPopUpOpen(false)}>
                     <div id = "popUpMain">
                         <div id = "popUpHeader">{categoryTitleHash[popUpCategory]}</div>
                         <div id = "popUpContent">{contentWithBreaks}</div>
                     </div>
                 </div>
+                </>
             )
         }
     }
