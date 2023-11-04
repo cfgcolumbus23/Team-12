@@ -46,41 +46,22 @@ const data = [
   },
 ];
 
-function between(data, between) {
-  const today = new Date();
-  const previous = new Date(today);
-  previous.setDate(previous.getDate() - (between + 1));
 
-  let filter = data.filter((val) => {
-    let userDate = new Date(val.dt);
-    if (between == 0) return val;
-    return previous <= userDate && today >= userDate;
-  });
-
-  // sort with asending order
-  return filter.sort((a, b) => {
-    if (a.score === b.score) {
-      return b.score - a.score;
-    } else {
-      return b.score - a.score;
-    }
-  });
-}
 
 const Leaderboard = () => {
-  const [period, setPeriod] = useState(0);
 
-  const handleClick = (e) => {
-    setPeriod(e.target.dataset.id);
-  };
+    const sortedData = [...data].sort((a, b) => b.score - a.score);
 
   return (
     <div className="board">
       <h1 className="leaderboard">Leaderboard</h1>
       <ul>
         <>
-          {data.map((value, index) => (
+          {sortedData.map((value, index) => (
             <div className="flex" key={index}>
+              <div className="item">
+                <span>{index + 1}</span>
+              </div>
               <div className="item">
                 <img src={value.img} alt="" />
 
