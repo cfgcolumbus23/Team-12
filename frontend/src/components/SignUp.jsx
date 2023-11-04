@@ -44,6 +44,8 @@ const SignUp = () => {
       return;
     }
 
+    sendSMS(phoneNumber);
+
     // If validation passes, you can proceed with the registration logic here
     // For now, we'll just show an alert with the input values
     alert(
@@ -125,13 +127,12 @@ const SignUp = () => {
       </div>
       {error && <div className="error-message">{error}</div>}
       <div className="buttonDiv">
-        <Link to="/profile">
+        {/* <Link to="/profile"> */}
           <button type="button" className="button" onClick={handleRegister}>
             Register
-          </button>
-        </Link>
+          </button>   
+        {/* </Link> */}
       </div>
-      <sendSMS phoneNumber={phoneNumber} />
     </div>
   );
 };
