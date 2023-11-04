@@ -46,11 +46,11 @@ const SignUp = () => {
             </div>
             <div className="password">
                 <label className="form-label" for="password">Create Password</label>
-                <input className="form-input" type="text" id="password" placeholder="Password" value={data.password} onChange={(e) => setData({...data, password: e.target.value})}/>
+                <input className="form-input" type="password" id="password" placeholder="Password" value={data.password} onChange={(e) => setData({...data, password: e.target.value})}/>
           </div>
             <div className="email">
                   <label className="form-label" for="email">Email</label>
-                  <input className="form-input" type="text" id="email" placeholder="Email" value={data.email} onChange={(e) => setData({...data, email: e.target.value})}/>
+                  <input className="form-input" type="email" id="email" placeholder="Email" value={data.email} onChange={(e) => setData({...data, email: e.target.value})}/>
             </div>
             <div className="phoneNumber">
                   <label className="form-label" for="phoneNumber">Phone Number (Optional)</label>

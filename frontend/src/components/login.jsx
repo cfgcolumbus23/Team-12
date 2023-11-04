@@ -35,11 +35,11 @@ const SignIn = () => {
         <div className="form-input-sections">
             <div className="id">
                   <label className="form-label" for="id">Employee ID</label>
-                  <input className="form-input" type="text" id="id" placeholder="Employee ID" value={data.employeeID} onChange={(e) => setData({...data, employeeID: e.target.value})}/>
+                  <input className="form-input" type="email" id="id" placeholder="Employee ID" value={data.employeeID} onChange={(e) => setData({...data, employeeID: e.target.value})}/>
             </div>
             <div className="password">
                 <label className="form-label" for="password">Create Password</label>
-                <input className="form-input" type="text" id="password" placeholder="Password" value={data.password} onChange={(e) => setData({...data, password: e.target.value})}/>
+                <input className="form-input" type="password" id="password" placeholder="Password" value={data.password} onChange={(e) => setData({...data, password: e.target.value})}/>
           </div>
         </div>
         <div className="buttonDiv"><button type="submit" className="button" onClick={loginUser}>Register</button></div>
