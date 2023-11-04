@@ -21,10 +21,10 @@ const Navbar = () => {
       console.log("NOT LOGGED IN");
       return (
         <div id="loginRegisterContainer">
-          <Link to="signin" className="loginRegisterItem">
+          <Link to="/signin" className="loginRegisterItem">
             Login
           </Link>
-          <Link to="signup" className="loginRegisterItem">
+          <Link to="/signup" className="loginRegisterItem">
             Register
           </Link>
         </div>
