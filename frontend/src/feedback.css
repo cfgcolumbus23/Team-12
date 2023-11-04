@@ -7,7 +7,6 @@
 
 * > * {
   font-family: "Geologica-medium", sans-serif;
-  color: #fff;
 }
 
 .form-input-sections {
@@ -17,20 +16,28 @@
 
 .form-label {
   font-weight: bold;
-  color: #fff;
+  color: #0050a0;
 }
 
 h2,
 h3 {
   text-align: center;
-  color: #fff;
+  color: #0050a0;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  margin-top: 10px;
+  font-size: 16px;
 }
 .form-input {
   width: 100%;
   padding: 8px;
-  border-radius: 5px;
-  font-size: 16px;
+  border-radius: 10px;
+  font-size: 20px;
   margin-top: 5px;
+  color: #0050a0;
 }
 
 .button {
