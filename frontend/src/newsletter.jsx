@@ -36,12 +36,8 @@ function newsletter() {
   return (
     <>
       <Navbar />
-<<<<<<< HEAD
       <Popup/>
       <div className="admin-panel1">
-=======
-      <div className="admin-panel">
->>>>>>> 94fd80c8d5f7d8b55b9e8b3b38db8cc9e79ee0ae
         <button onClick={() => setShowForm(true)}>Add New Post</button> {/* Button to show form */}
       </div>
       {showForm && <PostForm closeForm={() => setShowForm(false)} />} {/* Conditionally render the form */}
