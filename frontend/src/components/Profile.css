@@ -1,0 +1,53 @@
+.profile-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .profile-header {
+    text-align: center;
+  }
+  
+  .profile-header-title {
+    font-size: 30px;
+    color: #333;
+  }
+  
+  .streak-info, .team-points, .course-progress {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .info-label {
+    font-weight: bold;
+    color: #0050a0;
+    margin-bottom: 10px;
+  }
+  
+  .info-value {
+    margin-top: 10px;
+    color: #333;
+  }
+  
+  .progress-bar {
+    background-color: #ddd;
+    border-radius: 10px;
+    height: 20px;
+  }
+  
+  .progress {
+    background-color: #007bff;
+    border-radius: 10px;
+    height: 20px;
+    color: #fff;
+    text-align: center;
+  }
+  
+  

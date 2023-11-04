@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom'
+import Navbar from "./Navbar.jsx";
 import './SignUp.css';
 
 const SignUp = () => {
@@ -35,6 +36,7 @@ const SignUp = () => {
       }
 
     return <div className="form" onSubmit={registerUser}>
+      <Navbar />
         <div className="form-input-sections">
             <div className="preferredName">
                   <label className="form-label" for="preferredName">Preferred Name</label>
