@@ -16,7 +16,15 @@
     left:20px;
     top:6px;
     position:absolute;
+    transition: fill 0.3s ease; 
+    /*smooth transition for the fill color */
   }
+
+  #navBarMenuIcon:hover {
+    fill: #a2d5f2; /* Lighter blue color */
+  }
+  
+  
   #navBarLogo{
     max-height:50px;
     width:auto;
@@ -36,7 +44,23 @@
     border-right-width:2px;
     overflow-x:hidden;
     overflow-y:hidden;
+    display: flex; /*use flex layout */
+    flex-direction: column; /*stack children vertically */
+    justify-content: flex-start; /* Align children to the top */
+    align-items: center; /* Center children horizontally */
+    transition: transform 0.3s ease; /* Add transition for smooth opening */
 }
+
+/* When menu is not opened, it should be translated to the left out of view */
+#sideBarOpen.closed {
+  transform: translateX(-100%);
+}
+
+/* When menu is opened, it should translate back to its original position */
+#sideBarOpen.open {
+  transform: translateX(0);
+}
+
 #sideMenuItemContainers{
     position:relative;
     height:100%;
@@ -89,7 +113,13 @@
     text-decoration:none;
     font-family:'Geologica-extrabold';
     margin-right: 10px; /* Adjust as needed */
-    margin-top:22px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    transition:text-shadow 0.3s ease;
+  }
+
+  .loginRegisterItem:hover {
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.75);
   }
   
 .icon{

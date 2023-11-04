@@ -27,6 +27,9 @@ const Navbar = () => {
           <Link to="/signup" className="loginRegisterItem">
             Register
           </Link>
+          <Link to="/profile" className="loginRegisterItem">
+            Profile
+          </Link>
         </div>
       );
     } else {
@@ -44,13 +47,15 @@ const Navbar = () => {
           id="navBarMenuIcon"
           src="three.svg"
           alt="Menu Icon"
-          onClick={() => menuClicked()}
+          onClick={() => menuClicked()} //this fcn toggles the menuOpen state
         />
 
         {renderEitherLoginRegisterOrProfilePicture()}
       </div>
       {menuOpen && (
-        <div id="sideBarOpen">
+        <div id="sideBarOpen" className={menuOpen ? 'open' 
+      
+      : 'closed'}>
           <img
             id="navBarMenuIcon"
             src="three.svg"
@@ -93,6 +98,14 @@ const Navbar = () => {
             >
               <h1 className="sideMenuItemText">Feedback</h1>
               <img className="icon" src="notepad.svg" />
+            </div>
+            <div
+              className="sideMenuItem"
+              id="sideMenuItem5"
+              onClick={() => handleMenuItemClick("/leaderboard")}
+            >
+              <h1 className="sideMenuItemText">Leaderboard</h1>
+              <img className="icon" src="leaderboard.svg" />
             </div>
           </div>
         </div>
