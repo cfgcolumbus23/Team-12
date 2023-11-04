@@ -1,6 +1,5 @@
-// PostForm.js
-
 import React, { useState } from 'react';
+import './PostForm.css'; // Make sure the path is correct
 
 function PostForm({ closeForm }) {
   const [title, setTitle] = useState('');
@@ -17,7 +16,7 @@ function PostForm({ closeForm }) {
     }
 
     try {
-      const response = await fetch('/api/posts', {
+      const response = await fetch('/api/post', {
         method: 'POST',
         body: formData,
       });
@@ -28,7 +27,7 @@ function PostForm({ closeForm }) {
 
       // Close the form and refresh posts
       closeForm();
-      // Add logic to refresh the posts list here if needed
+      // Here you would add logic to refresh the posts list if needed
 
       const newPost = await response.json();
       console.log('Success:', newPost);
@@ -39,28 +38,42 @@ function PostForm({ closeForm }) {
 
   return (
     <div className="post-form-modal">
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          placeholder="Title"
-          required
-        />
-        <textarea
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-          placeholder="Content"
-          required
-        />
-        <input
-          type="file"
-          onChange={(e) => setImage(e.target.files[0])}
-          accept="image/*"
-        />
-        <button type="submit">Submit Post</button>
-        <button type="button" onClick={closeForm}>Cancel</button>
-      </form>
+      <div className="post-form-container">
+        <form onSubmit={handleSubmit} className="post-form">
+          <label htmlFor="title">Title</label>
+          <input
+            type="text"
+            id="title"
+            className="post-form-title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Enter post title"
+            required
+          />
+          
+          <label htmlFor="content">Content</label>
+          <textarea
+            id="content"
+            className="post-form-content"
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+            placeholder="What's on your mind?"
+            required
+          />
+          
+          <label htmlFor="imageUpload">Upload Image</label>
+          <input
+            type="file"
+            id="imageUpload"
+            className="post-form-image"
+            onChange={(e) => setImage(e.target.files[0])}
+            accept="image/*"
+          />
+          
+          <button type="submit" className="post-form-submit">Submit Post</button>
+          <button type="button" onClick={closeForm} className="post-form-cancel">Cancel</button>
+        </form>
+      </div>
     </div>
   );
 }

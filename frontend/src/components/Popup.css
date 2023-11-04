@@ -4,7 +4,7 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 40%;
-    min-height: 60%;
+    min-height: 70%;
     padding: 30px 40px;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -44,7 +44,7 @@
 .popup a {
     display: block;
     width: 200px;
-    height: 25px;
+    height: 40px;
     position: relative;
     top: 50px;
     margin: auto;
@@ -61,7 +61,7 @@
 .popup a:hover {
     display: block;
     width: 200px;
-    height: 25px;
+    height: 40px;
     position: relative;
     margin: auto;
     text-align: center;
@@ -70,4 +70,14 @@
     text-decoration: none;
     justify-self: center;
     padding: 5px 0;
+}
+
+@media (max-width: 758px) {
+    .popup {
+        width: 80%;
+        max-height: 100px;
+        padding: 20px;
+        margin-top: 100px;
+        top: 40%;
+    }
 }
