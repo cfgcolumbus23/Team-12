@@ -5,5 +5,5 @@ const router = express.Router();
 // Auth Routes
 router.post("/register", registerUser);
 router.post("/login", loginUser);
-router.post("/updateprogress",updateProgress)
+router.patch("/updateprogress",updateProgress)
 module.exports = router;
