@@ -27,6 +27,8 @@
   
   .info-label {
     font-weight: bold;
+    color: #0050a0;
+    margin-bottom: 10px;
   }
   
   .info-value {
