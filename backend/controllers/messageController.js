@@ -3,10 +3,11 @@ const Message = require("../models/messageModel");
 //gets the messages between two users
 exports.directMessage = async (req, res) => {
   try {
-    const { senderId: user1Id, receiverId: user2Id } = req.body;
-    console.log("USERID", req.body);
+    const user1Id = req.query.senderId;
+    const user2Id = req.query.receiverId;
+    console.log("USERIDS Print", user1Id);
     if (!user1Id || !user2Id) {
-      return res.status(400).send("Both user IDs are required.");
+      return res.status(400).send("Bth user IDs are reqouired.");
     }
     //filters out from specific sender and receiver
     const messages = await Message.find({

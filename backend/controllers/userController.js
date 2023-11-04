@@ -63,8 +63,8 @@ const loginUser = async (req, res) => {
         // Check if password matches user password
         const match = await comparePassword(password, user.password);
         if (match) {
-            console.log("Success");
             res.json("Success");
+            localStorage.setItem("userID", JSON.stringify(user.employeeID));
         } else {
             res.json({
                 error: "Wrong password"
