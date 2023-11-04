@@ -16,7 +16,8 @@
     left:20px;
     top:6px;
     position:absolute;
-    transition: fill 0.3s ease; //smooth transition for the fill color
+    transition: fill 0.3s ease; 
+    /*smooth transition for the fill color */
   }
 
   #navBarMenuIcon:hover {
@@ -27,7 +28,7 @@
   #navBarLogo{
     max-height:50px;
     width:auto;
-    left:50%;
+    left:48%;
     top:6px;
     position:absolute;
   }
@@ -119,6 +120,7 @@
 
   .loginRegisterItem:hover {
     background-color: #a2d5f2; /* Lighter blue color for hover effect */
+    margin-top:22px;
   }
   
 .icon{
@@ -126,4 +128,16 @@
     width:auto;
     margin-left:50%;
     margin-top:-20%;
+}
+@media (max-width: 767px) {
+    .sideMenuItemText{
+        font-size:12px;
+    }
+
+    .icon {
+        height:20px;
+        width:auto;
+        margin-left:60%;
+        margin-top:-20%;
+    }
 }

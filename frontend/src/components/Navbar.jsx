@@ -21,10 +21,10 @@ const Navbar = () => {
       console.log("NOT LOGGED IN");
       return (
         <div id="loginRegisterContainer">
-          <Link to="signin" className="loginRegisterItem">
+          <Link to="/signin" className="loginRegisterItem">
             Login
           </Link>
-          <Link to="signup" className="loginRegisterItem">
+          <Link to="/signup" className="loginRegisterItem">
             Register
           </Link>
         </div>
@@ -34,7 +34,7 @@ const Navbar = () => {
     }
   }
   function handleProfileMenuOpen() {
-    // show whether user is logged in or not
+    // menu below profile picture
   }
   return (
     <div>
@@ -76,13 +76,9 @@ const Navbar = () => {
               <h1 className="sideMenuItemText">Newsletter</h1>
               <img className="icon" src="news.svg" />
             </div>
-            <div
-              className="sideMenuItem"
-              id="sideMenuItem3"
-              onClick={() => handleMenuItemClick("/")}
-            >
-              <h1 className="sideMenuItemText">Courses</h1>
-              <img className="icon" src="board.svg" />
+            <div className = "sideMenuItem" id = "sideMenuItem3" onClick = {()=>handleMenuItemClick("/training")}>
+                <h1 className = "sideMenuItemText">Training</h1>
+                <img className = "icon" src="board.svg"/>
             </div>
             <div
               className="sideMenuItem"
