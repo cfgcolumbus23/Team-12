@@ -4,8 +4,28 @@
     top:0;
     left:0;
     margin-left: 20%;
-    margin-top:7%;
-    background-color:black;
+    margin-top:12%;
     position:absolute;
     color:white;
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
 }
+.courseCategory{
+    color:white;
+    font-family: 'geologica-extrabold';
+    flex: 1 1 30%;
+    height:20%;
+    border-radius:16px;
+    background-color:rgb(28,117,188);
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    
+}
+.courseCategory:hover{  
+    flex-grow: 1.5;
+    transition:all 0.5s;
+    background-color:rgb(10, 53, 87);
+}
+
