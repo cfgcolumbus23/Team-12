@@ -43,15 +43,12 @@ const Navbar = () => {
     <div>
       <div id="navBarMain">
         <img id="navBarLogo" src="logo.webp" alt="Logo" />
-        <div className="center-title">
           <img
             id="navBarMenuIcon"
             src="three.svg"
             alt="Menu Icon"
             onClick={() => menuClicked()} //this fcn toggles the menuOpen state
           />
-          <h1>Goodwill</h1>
-        </div>
 
         {renderEitherLoginRegisterOrProfilePicture()}
       </div>
@@ -65,7 +62,7 @@ const Navbar = () => {
             alt="Menu Icon"
             onClick={() => menuClicked()}
           />
-          <h2>Goodwill</h2>
+          <div><h2>Goodwill <br></br>Connect</h2></div>
           <div id="sideMenuItemContainers">
             <div
               className="sideMenuItem"
