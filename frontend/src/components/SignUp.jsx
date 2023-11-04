@@ -15,11 +15,6 @@ const SignUp = () => {
     return /\S+@\S+\.\S+/.test(email);
   };
 
-  const isNumeric = (str) => {
-      // Use a regular expression to check if the string contains only numeric characters
-      return /^\d+$/.test(str);
-    };
-
   const handleRegister = () => {
     // Basic input validation logic
     if (preferredName.trim() === '') {
@@ -54,7 +49,6 @@ const SignUp = () => {
 
   return (
     <div className="form">
-      <Navbar />
       <div className="form-input-sections">
         <div className="preferredName">
           <label className="form-label" htmlFor="preferredName">

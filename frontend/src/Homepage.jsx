@@ -8,6 +8,7 @@ const Homepage = () => {
     { text: 'Training', icon: 'board.svg', link: '/training' },
     { text: 'Messages', icon: 'messages.svg', link: '/messages' },
     { text: 'Feedback', icon: 'notepad.svg', link: '/feedback' },
+    { text: 'Leaderboard', icon: 'leaderboard.svg', link: '/leaderboard'}
   ];
 
   return (
