@@ -44,13 +44,15 @@ const Navbar = () => {
           id="navBarMenuIcon"
           src="three.svg"
           alt="Menu Icon"
-          onClick={() => menuClicked()}
+          onClick={() => menuClicked()} //this fcn toggles the menuOpen state
         />
 
         {renderEitherLoginRegisterOrProfilePicture()}
       </div>
       {menuOpen && (
-        <div id="sideBarOpen">
+        <div id="sideBarOpen" className={menuOpen ? 'open' 
+      
+      : 'closed'}>
           <img
             id="navBarMenuIcon"
             src="three.svg"
