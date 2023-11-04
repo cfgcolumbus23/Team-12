@@ -71,13 +71,15 @@
   }
   
   .post-form button[type="submit"] {
-    background-color: #28a745; /* Success green for submit */
+    background-color: #007bff; /* Success green for submit */
     color: white;
   }
   
   .post-form button[type="button"] {
-    background-color: #dc3545; /* Danger red for cancel */
+    background-color: #6c757d;
+    /* Danger red for cancel */
     color: white;
+    border: 1px solid #6c757d;
   }
   
   .post-form button:hover {
