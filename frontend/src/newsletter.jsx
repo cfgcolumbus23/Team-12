@@ -1,17 +1,12 @@
-<<<<<<< HEAD
-import Navbar from './components/Navbar.jsx'
-import Popup from './components/Popup.jsx'
-=======
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import Popup from './components/Popup'
-import './newsletter.css'
-import Navbar from './components/Navbar'
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import Popup from "./components/Popup";
+import "./newsletter.css";
+import Navbar from "./components/Navbar";
 
->>>>>>> 7ee65c5ca71493120a45d16d509a7be7c4f9ac13
-import React, { useState, useEffect } from 'react';
-import './newsletter.css';
-import PostForm from './PostForm.jsx';
+import React, { useState, useEffect } from "react";
+import "./newsletter.css";
+import PostForm from "./PostForm.jsx";
 
 function newsletter() {
   const [posts, setPosts] = useState([]);
@@ -37,11 +32,13 @@ function newsletter() {
   return (
     <>
       <Navbar />
-      <Popup/>
+      <Popup />
       <div className="admin-panel">
-        <button onClick={() => setShowForm(true)}>Add New Post</button> {/* Button to show form */}
+        <button onClick={() => setShowForm(true)}>Add New Post</button>{" "}
+        {/* Button to show form */}
       </div>
-      {showForm && <PostForm closeForm={() => setShowForm(false)} />} {/* Conditionally render the form */}
+      {showForm && <PostForm closeForm={() => setShowForm(false)} />}{" "}
+      {/* Conditionally render the form */}
       <div className="posts-container">
         {posts.map((post) => (
           <div key={post._id} className="post">
@@ -49,12 +46,13 @@ function newsletter() {
             <p>{post.content}</p>
             {/* Placeholder for comments */}
             <div className="comments-section">
-              {post.comments && post.comments.map((comment) => (
-                <div key={comment._id} className="comment">
-                  <p>{comment.text}</p>
-                  {/* Add more comment details here */}
-                </div>
-              ))}
+              {post.comments &&
+                post.comments.map((comment) => (
+                  <div key={comment._id} className="comment">
+                    <p>{comment.text}</p>
+                    {/* Add more comment details here */}
+                  </div>
+                ))}
             </div>
             {/* More post details like buttons or additional info could be added here */}
           </div>
