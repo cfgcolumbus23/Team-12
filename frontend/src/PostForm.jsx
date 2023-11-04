@@ -1,18 +1,12 @@
-<<<<<<< HEAD
-/*try {
-=======
-import React, { useState } from 'react';
-import './PostForm.css'; // Make sure the path is correct
-import axios from 'axios';
-
-function PostForm({ closeForm }) {
+  /*try {
+  function PostForm({ closeForm }) {
   // State variables to manage the form fields
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [image, setImage] = useState(null);
 
   // Function to handle form submission
-  /*
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -106,7 +100,6 @@ function submitFunction(){
   });
 }
   return (
-<<<<<<< HEAD
     <div className="admin-panel">
       <button onClick={() => setShowForm(true)}>Add New Post</button>
       
@@ -189,44 +182,6 @@ function submitFunction(){
             </div>
           </div>
         ))}
-=======
-    <div className="post-form-modal">
-      <div className="post-form-container">
-        <form onSubmit={submitFunction} className="post-form">
-          <label htmlFor="title">Title</label>
-          <input
-            type="text"
-            id="title"
-            className="post-form-title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder="Enter post title"
-            required
-          />
-          
-          <label htmlFor="content">Content</label>
-          <textarea
-            id="content"
-            className="post-form-content"
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
-            placeholder="What's on your mind?"
-            required
-          />
-          
-          <label htmlFor="imageUpload">Upload Image</label>
-          <input
-            type="file"
-            id="imageUpload"
-            className="post-form-image"
-            onChange={(e) => setImage(e.target.files[0])}
-            accept="image/*"
-          />
-          
-          <button type="submit" className="post-form-submit">Submit Post</button>
-          <button type="button" onClick={closeForm} className="post-form-cancel">Cancel</button>
-        </form>
->>>>>>> 94fd80c8d5f7d8b55b9e8b3b38db8cc9e79ee0ae
       </div>
     </div>
   );
