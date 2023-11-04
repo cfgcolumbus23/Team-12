@@ -39,13 +39,8 @@ const Homepage = () => {
       <Navbar />
       <div id="circleDiv">
         <div id="row1">
-        <Circle
-          key={0} // You can use a constant key since there's only one item
-          text={navItems[0].text}
-          icon={navItems[0].icon}
-          link={navItems[0].link}
-          navigate={navigate}
-        />
+        
+        <div>
         <Circle
           key={1} // You can use a constant key since there's only one item
           text={navItems[1].text}
@@ -53,6 +48,8 @@ const Homepage = () => {
           link={navItems[1].link}
           navigate={navigate}
         />
+        </div>
+        <div>
         <Circle
           key={2} // You can use a constant key since there's only one item
           text={navItems[2].text}
@@ -61,7 +58,9 @@ const Homepage = () => {
           navigate={navigate}
         />
         </div>
+        </div>
         <div id="row2">
+        <div>
         <Circle
           key={3} // You can use a constant key since there's only one item
           text={navItems[3].text}
@@ -69,6 +68,8 @@ const Homepage = () => {
           link={navItems[3].link}
           navigate={navigate}
         />
+        </div>
+        <div>
         <Circle
           key={4} // You can use a constant key since there's only one item
           text={navItems[4].text}
@@ -76,6 +77,8 @@ const Homepage = () => {
           link={navItems[4].link}
           navigate={navigate}
         />
+        </div>
+        <div>
         <Circle
           key={5} // You can use a constant key since there's only one item
           text={navItems[5].text}
@@ -83,6 +86,7 @@ const Homepage = () => {
           link={navItems[5].link}
           navigate={navigate}
         />
+        </div>
         </div>
       </div>
     </>
