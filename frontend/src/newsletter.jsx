@@ -1,6 +1,5 @@
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import Popup from './components/Popup'
 import './newsletter.css'
 import Navbar from './components/Navbar'
 
@@ -32,7 +31,6 @@ function newsletter() {
   return (
     <>
       <Navbar />
-      <Popup/>
       <div className="admin-panel">
         <button onClick={() => setShowForm(true)}>Add New Post</button> {/* Button to show form */}
       </div>
