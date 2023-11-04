@@ -53,96 +53,75 @@ const SignUp = () => {
   };
 
   return (
-    <div className="form">
-      <div className="form-input-sections">
-        <div className="preferredName">
-          <label className="form-label" htmlFor="preferredName">
-            Preferred Name
-          </label>
-          <input
-            className="form-input"
-            type="text"
-            id="preferredName"
-            placeholder="Preferred Name"
-            value={preferredName}
-            onChange={(e) => setPreferredName(e.target.value)}
-          />
-        </div>
-        <div className="id">
-          <label className="form-label" htmlFor="id">
-            Employee ID
-          </label>
-          <input
-            className="form-input"
-            type="text"
-            id="id"
-            placeholder="Employee ID"
-            value={employeeID}
-            onChange={(e) => setEmployeeID(e.target.value)}
-          />
-        </div>
-        <div className="password">
-          <label className="form-label" htmlFor="password">
-            Create Password
-          </label>
-          <input
-            className="form-input"
-            type="password"
-            id="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <div className="email">
-          <label className="form-label" htmlFor="email">
-            Email
-          </label>
-          <input
-            className="form-input"
-            type="text"
-            id="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="phoneNumber">
-          <label className="form-label" htmlFor="phoneNumber">
-            Phone Number (Optional)
-          </label>
-          <input
-            className="form-input"
-            type="text"
-            id="phoneNumber"
-            placeholder="Phone Number"
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
-          />
-    return <div>
+    <div>
       <Navbar />
       <div className="form">
         <div className="form-input-sections">
-            <div className="preferredName">
-                  <label className="form-label" for="preferredName">Preferred Name</label>
-                  <input className="form-input" type="text" id="preferredName" placeholder="Preferred Name"/>
-            </div>
-            <div className="id">
-                  <label className="form-label" for="id">Employee ID</label>
-                  <input className="form-input" type="text" id="id" placeholder="Employee ID"/>
-            </div>
-            <div className="password">
-                <label className="form-label" for="password">Create Password</label>
-                <input className="form-input" type="text" id="password" placeholder="Password"/>
+          <div className="preferredName">
+            <label className="form-label" htmlFor="preferredName">
+              Preferred Name
+            </label>
+            <input
+              className="form-input"
+              type="text"
+              id="preferredName"
+              placeholder="Preferred Name"
+              value={preferredName}
+              onChange={(e) => setPreferredName(e.target.value)}
+            />
           </div>
-            <div className="email">
-                  <label className="form-label" for="email">Email</label>
-                  <input className="form-input" type="text" id="email" placeholder="Email"/>
-            </div>
-            <div className="phoneNumber">
-                  <label className="form-label" for="phoneNumber">Phone Number (Optional)</label>
-                  <input className="form-input" type="text" id="phoneNumber" placeholder="Phone Number"/>
-            </div>
+          <div className="id">
+            <label className="form-label" htmlFor="id">
+              Employee ID
+            </label>
+            <input
+              className="form-input"
+              type="text"
+              id="id"
+              placeholder="Employee ID"
+              value={employeeID}
+              onChange={(e) => setEmployeeID(e.target.value)}
+            />
+          </div>
+          <div className="password">
+            <label className="form-label" htmlFor="password">
+              Create Password
+            </label>
+            <input
+              className="form-input"
+              type="password"
+              id="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <div className="email">
+            <label className="form-label" htmlFor="email">
+              Email
+            </label>
+            <input
+              className="form-input"
+              type="text"
+              id="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="phoneNumber">
+            <label className="form-label" htmlFor="phoneNumber">
+              Phone Number (Optional)
+            </label>
+            <input
+              className="form-input"
+              type="text"
+              id="phoneNumber"
+              placeholder="Phone Number"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+            />
+          </div>
         </div>
       </div>
       {error && <div className="error-message">{error}</div>}
