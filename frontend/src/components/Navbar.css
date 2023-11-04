@@ -85,6 +85,8 @@
 
 .loginRegisterItem {
     display: inline-block;
+    color:white;
+    text-decoration:none;
     font-family:'Geologica-extrabold';
     margin-right: 10px; /* Adjust as needed */
   }

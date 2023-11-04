@@ -21,8 +21,8 @@ const Navbar = () => {
             console.log("NOT LOGGED IN")
             return(
                 <div id ="loginRegisterContainer">
-                    <div className = "loginRegisterItem">Login</div>
-                    <div className = "loginRegisterItem">Register</div>
+                    <Link to="signin" className = "loginRegisterItem">Login</Link>
+                    <Link to= "signup" className = "loginRegisterItem">Register</Link>
                 </div>
             )
         }
@@ -46,10 +46,6 @@ const Navbar = () => {
           alt="Menu Icon"
           onClick={() => menuClicked()}
         />
-        <Link to="/messages">MESSAGES</Link>
-        <Link to="/feedback">FEEDBACK</Link>
-        <Link to="/signUp">SIGN UP</Link>
-        <Link to="/signIn">SIGN IN</Link>
 
         {renderEitherLoginRegisterOrProfilePicture()}
 
