@@ -35,6 +35,7 @@ const SignIn = () => {
     return <div className="form" onSubmit={loginUser}>
         <Navbar />
         <div className="form-input-sections">
+            <h2>Login</h2>
             <div className="id">
                   <label className="form-label" for="id">Employee ID</label>
                   <input className="form-input" type="email" id="id" placeholder="Employee ID" value={data.employeeID} onChange={(e) => setData({...data, employeeID: e.target.value})}/>
