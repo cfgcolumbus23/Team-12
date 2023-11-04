@@ -35,20 +35,7 @@ const SignIn = () => {
       };
 
     return <div className="form">
-<<<<<<< HEAD
-        <Navbar />
-        <div className="form-input-sections">
-            <div className="id">
-                  <label className="form-label" for="id">Employee ID</label>
-                  <input className="form-input" type="text" id="id" placeholder="Employee ID"/>
-            </div>
-            <div className="password">
-                <label className="form-label" for="password">Create Password</label>
-                <input className="form-input" type="text" id="password" placeholder="Password"/>
-          </div>
-        </div>
-        <div className="buttonDiv"><button type="submit" className="button">Register</button></div>
-=======
+    <Navbar />  
     <div className="form-input-sections">
       <div className="id">
         <label className="form-label" htmlFor="id">
@@ -76,7 +63,6 @@ const SignIn = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
->>>>>>> 9b7171e94a7ee8113874e6b2884b5d3e60030825
     </div>
     {error && <div className="error-message">{error}</div>}
     <div className="buttonDiv">
