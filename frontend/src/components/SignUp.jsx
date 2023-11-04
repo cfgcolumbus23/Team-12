@@ -14,6 +14,7 @@ const SignUp = () => {
             phoneNumber: '',
       })
       
+      // register user and put their info in the database
       const registerUser = async (e) => {
             console.log("regestering")
             e.preventDefault();
@@ -28,13 +29,14 @@ const SignUp = () => {
               } else {
                 setData({});
                 window.alert('Registration Successful, Welcome!');
-                navigate('/sign');
+                navigate('/signin');
               }
             } catch (error) {
               console.log(error);
             }
       }
 
+      // create the registration form with spaces for name, ID, password, email, and phone number
     return <div className="form" onSubmit={registerUser}>
       <Navbar />
         <div className="form-input-sections">
