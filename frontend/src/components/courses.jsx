@@ -30,7 +30,7 @@ const Training = () => {
             // shows translucent background with popup showing information on clicked category
             return(
                 <>
-                <div id = "popUpCompleteButton" onClick = {() => console.log("CLICKED")}>Mark Complete</div>
+                <div id = "popUpCompleteButton" onClick = {() => setPopUpOpen(false)}>Mark Complete</div>
                 <div id = "popUpBackground" onClick = {() => setPopUpOpen(false)}>
                     <div id = "popUpMain">
                         <div id = "popUpHeader">{categoryTitleHash[popUpCategory]}</div>
@@ -55,7 +55,7 @@ const Training = () => {
             <div className = "courseCategory" id = "fourthCourseCategory" onClick={()=>handleCategoryClick("hospitality")}>Hospitality</div>
             <div className = "courseCategory" id = "fourthCourseCategory" onClick={()=>handleCategoryClick("logistics")}>Logistics</div>
         </div>
-        {showCategoryPopUp(popUpCategory)}
+        {popUpOpen ? showCategoryPopUp(popUpCategory):<></>}
         <Navbar/>
     </div>
   )
