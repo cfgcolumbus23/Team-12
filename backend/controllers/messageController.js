@@ -1,5 +1,6 @@
 const Message = require("../models/messageModel");
 
+//gets the messages between two users
 exports.directMessage = async (req, res) => {
   try {
     const { senderId: user1Id, receiverId: user2Id } = req.body;
@@ -7,7 +8,7 @@ exports.directMessage = async (req, res) => {
     if (!user1Id || !user2Id) {
       return res.status(400).send("Both user IDs are required.");
     }
-
+    //filters out from specific sender and receiver
     const messages = await Message.find({
       $or: [
         { senderId: user1Id, receiverId: user2Id },
@@ -17,6 +18,7 @@ exports.directMessage = async (req, res) => {
 
     res.status(200).json(messages);
   } catch (error) {
+    //catch statements to better debug where the error is coming from
     if (
       error.name === "CastError" &&
       (error.path === "senderId" || error.path === "receiverId")
@@ -28,6 +30,7 @@ exports.directMessage = async (req, res) => {
   }
 };
 
+//sends the message to mongosedb
 exports.sendMessage = async (req, res) => {
   try {
     const { senderId, receiverId, content } = req.body;
@@ -36,6 +39,7 @@ exports.sendMessage = async (req, res) => {
       return res.status(400).send("Required fields are missing.");
     }
 
+    //format for sending new messages
     const newMessage = new Message({
       senderId,
       receiverId,

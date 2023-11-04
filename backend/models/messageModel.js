@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-//TODO: Change mongost scheme based on where the user information is being saved
+//structure of how each message will be formated
 const messageSchema = new mongoose.Schema({
   senderId: {
     type: String,
