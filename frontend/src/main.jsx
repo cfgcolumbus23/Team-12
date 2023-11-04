@@ -7,6 +7,7 @@ import Feedback from "./feedback.jsx";
 import SignUp from "./components/SignUp.jsx";
 import SignIn from "./components/login.jsx";
 import Training from "./components/courses.jsx";
+import News from "./components/news.jsx";
 import "./index.css";
 
 
@@ -19,6 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Route path="/signIn" element={<SignIn />}></Route>
       <Route path="/signUp" element={<SignUp />}></Route>
       <Route path="/training" element={<Training />}></Route>
+      <Route path="/news" element={<News />}></Route>
     </Routes>
   </BrowserRouter>
 );
