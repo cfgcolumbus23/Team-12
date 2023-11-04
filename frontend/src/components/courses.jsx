@@ -12,25 +12,36 @@ const Training = () => {
     const [hospitalityMarked,setHospitalityMarked] = useState(false)    
     const [logisticsMarked,setLogisticsMarked] = useState(false)    
 
+    const [pointsEarned,setPointsEarned] = useState(0)
+
     function handleMarkCompleteClick(category){
+      // close the pop up
+      // set category as completed
+      // increase points earned by 50
       setPopUpOpen(false)
       if(category == "basic"){
         setBasicMarked(true)
+        setPointsEarned(pointsEarned + 50)
       }
       if(category == "digital"){
         setDigitalMarked(true)
+        setPointsEarned(pointsEarned + 50)
       }
       if(category == "information"){
         setInformationMarked(true)
+        setPointsEarned(pointsEarned + 50)
       }
       if(category == "healthcare"){
         setHealthcareMarked(true)
+        setPointsEarned(pointsEarned + 50)
       }
       if(category == "hospitality"){
         setHospitalityMarked(true)
+        setPointsEarned(pointsEarned + 50)
       }
       if(category == "logistics"){
         setLogisticsMarked(true)
+        setPointsEarned(pointsEarned + 50)
       }
 
     }
@@ -84,6 +95,7 @@ const Training = () => {
             <div className = {hospitalityMarked?"courseCategory2":"courseCategory"} onClick={()=>handleCategoryClick("hospitality")}>Hospitality</div>
             <div className = {logisticsMarked?"courseCategory2":"courseCategory"} onClick={()=>handleCategoryClick("logistics")}>Logistics</div>
         </div>
+        <div id = "pointsEarned">Points Earned: {pointsEarned}</div>
         {popUpOpen ? showCategoryPopUp(popUpCategory):<></>}
         <Navbar/>
     </div>

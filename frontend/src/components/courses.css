@@ -11,6 +11,11 @@
     flex-wrap:wrap;
     gap:20px;
 }
+#pointsEarned{
+    top:80%;
+    left:45%;
+    position:absolute;
+}
 .courseCategory{
     color:white;
     font-family: 'geologica-extrabold';
