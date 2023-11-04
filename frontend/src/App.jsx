@@ -5,7 +5,7 @@ import Navbar from './components/Navbar'
 import Popup from './components/Popup'
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import PostFrom from './PostForm.jsx';
+import PostForm from './PostForm.jsx';
 
 function App() {
   const [posts, setPosts] = useState([]);
