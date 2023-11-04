@@ -4,11 +4,6 @@ const cors = require("cors");
 require("dotenv").config();
 const cookieParser = require("cookie-parser");
 const app = express();
-const http = require("http").createServer(app);
-const io = require("socket.io")(http);
-
-const Message = require("./models/messageModel");
-const messageChangeStream = Message.watch();
 
 // Database Connection
 mongoose
@@ -30,23 +25,4 @@ app.use("/feed", require("./controllers/FeedController"));
 // Port
 const port = process.env.PORT;
 
-// app.listen(port, () => console.log(`Server is running on port ${port}`));
-
-//socket code for messages
-io.on("connection", (socket) => {
-  console.log("a user connected");
-  socket.on("disconnect", () => {
-    console.log("user disconnected");
-  });
-});
-
-http.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
-
-messageChangeStream.on("change", (change) => {
-  if (change.operationType === "insert") {
-    const newMessage = change.fullDocument;
-    io.emit("newMessage", newMessage);
-  }
-});
+app.listen(port, () => console.log(`Server is running on port ${port}`));

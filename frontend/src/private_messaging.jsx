@@ -10,6 +10,7 @@ function App() {
   const [selectedContact, setSelectedContact] = useState("");
   const [searchValue, setSearchValue] = useState("");
   const contacts = ["person1", "person2", "person3", "person4"];
+
   const currentUser = "person1";
 
   const handleSendMessage = () => {
