@@ -7,22 +7,22 @@ function App() {
   const [posts, setPosts] = useState([]);
   const [showForm, setShowForm] = useState(false);
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const response = await fetch('/api/posts');
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
-        setPosts(data);
-      } catch (error) {
-        console.error('There has been a problem with your fetch operation:', error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchPosts = async () => {
+  //     try {
+  //       const response = await fetch('/api/posts');
+  //       if (!response.ok) {
+  //         throw new Error('Network response was not ok');
+  //       }
+  //       const data = await response.json();
+  //       setPosts(data);
+  //     } catch (error) {
+  //       console.error('There has been a problem with your fetch operation:', error);
+  //     }
+  //   };
 
-    fetchPosts();
-  }, []);
+  //   fetchPosts();
+  // }, []);
 
   return (
     <>
