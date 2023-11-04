@@ -115,12 +115,11 @@
     margin-right: 10px; /* Adjust as needed */
     padding-top: 15px;
     padding-bottom: 15px;
-    transition:background-color 0.3s ease;
+    transition:text-shadow 0.3s ease;
   }
 
   .loginRegisterItem:hover {
-    background-color: #a2d5f2; /* Lighter blue color for hover effect */
-    margin-top:22px;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.75);
   }
   
 .icon{
