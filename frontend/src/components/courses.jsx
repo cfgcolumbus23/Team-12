@@ -5,6 +5,35 @@ import { useState } from 'react'
 const Training = () => {
     const [popUpOpen,setPopUpOpen] = useState(false)
     const [popUpCategory,setPopUpCategory] = useState("basic")
+    const [basicMarked,setBasicMarked] = useState(false)    
+    const [digitalMarked,setDigitalMarked] = useState(false)    
+    const [informationMarked,setInformationMarked] = useState(false)    
+    const [healthcareMarked,setHealthcareMarked] = useState(false)    
+    const [hospitalityMarked,setHospitalityMarked] = useState(false)    
+    const [logisticsMarked,setLogisticsMarked] = useState(false)    
+
+    function handleMarkCompleteClick(category){
+      setPopUpOpen(false)
+      if(category == "basic"){
+        setBasicMarked(true)
+      }
+      if(category == "digital"){
+        setDigitalMarked(true)
+      }
+      if(category == "information"){
+        setInformationMarked(true)
+      }
+      if(category == "healthcare"){
+        setHealthcareMarked(true)
+      }
+      if(category == "hospitality"){
+        setHospitalityMarked(true)
+      }
+      if(category == "logistics"){
+        setLogisticsMarked(true)
+      }
+
+    }
     function showCategoryPopUp(category){
         // hashes that help display the proper data
         let categoryTitleHash = {
@@ -30,7 +59,7 @@ const Training = () => {
             // shows translucent background with popup showing information on clicked category
             return(
                 <>
-                <div id = "popUpCompleteButton" onClick = {() => setPopUpOpen(false)}>Mark Complete</div>
+                <div id = "popUpCompleteButton" onClick = {() => handleMarkCompleteClick(category)}>Mark Complete</div>
                 <div id = "popUpBackground" onClick = {() => setPopUpOpen(false)}>
                     <div id = "popUpMain">
                         <div id = "popUpHeader">{categoryTitleHash[popUpCategory]}</div>
@@ -48,12 +77,12 @@ const Training = () => {
   return (
     <div id = "coursesContainer">
         <div id = "coursesContentContainer">
-            <div className = "courseCategory" id = "firstCourseCategory" onClick={()=>handleCategoryClick("basic")}>Basic Work Readiness</div>
-            <div className = "courseCategory" id = "secondCourseCategory" onClick={()=>handleCategoryClick("digital")}>Digital Literacy</div>
-            <div className = "courseCategory" id = "thirdCourseCategory" onClick={()=>handleCategoryClick("information")}>Information Technology</div>
-            <div className = "courseCategory" id = "fourthCourseCategory" onClick={()=>handleCategoryClick("healthcare")}>Healthcare</div>
-            <div className = "courseCategory" id = "fourthCourseCategory" onClick={()=>handleCategoryClick("hospitality")}>Hospitality</div>
-            <div className = "courseCategory" id = "fourthCourseCategory" onClick={()=>handleCategoryClick("logistics")}>Logistics</div>
+            <div className = {basicMarked?"courseCategory":"courseCategory"} id = "firstCourseCategory" onClick={()=>handleCategoryClick("basic")}>Basic Work Readiness</div>
+            <div className = {basicMarked?"courseCategory":"courseCategory"} onClick={()=>handleCategoryClick("digital")}>Digital Literacy</div>
+            <div className = {basicMarked?"courseCategory":"courseCategory"} onClick={()=>handleCategoryClick("information")}>Information Technology</div>
+            <div className = {basicMarked?"courseCategory":"courseCategory"} onClick={()=>handleCategoryClick("healthcare")}>Healthcare</div>
+            <div className = {basicMarked?"courseCategory":"courseCategory"} onClick={()=>handleCategoryClick("hospitality")}>Hospitality</div>
+            <div className = {basicMarked?"courseCategory":"courseCategory"} onClick={()=>handleCategoryClick("logistics")}>Logistics</div>
         </div>
         {popUpOpen ? showCategoryPopUp(popUpCategory):<></>}
         <Navbar/>
