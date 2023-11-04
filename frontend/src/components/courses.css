@@ -28,6 +28,26 @@
     transition:all 0.5s;
     background-color:rgb(10, 53, 87);
 }
+
+
+.courseCategory2{
+    color:white;
+    font-family: 'geologica-extrabold';
+    flex: 1 1 30%;
+    height:20%;
+    border-radius:16px;
+    background-color:rgb(28,210,188);
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    
+}
+.courseCategory2:hover{  
+    flex-grow: 1.5;
+    transition:all 0.5s;
+    background-color:rgb(15, 180, 150);
+}
+
 #popUpMain{
     background-color: rgb(28,117,188);
     height:70%;
