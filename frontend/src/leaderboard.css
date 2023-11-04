@@ -15,40 +15,12 @@
 }
 
 .board .leaderboard {
-  margin-bottom: 1em;
+  margin-bottom: 20px;
+  margin-right: 20px;
 }
 
-.board .duration {
-  display: flex;
-  justify-content: center;
-  gap: 1em;
-}
-
-.board .duration > button {
-  border: 1px solid var(--color-light);
-  padding: 0.5em 2em;
-  border-radius: 50px;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-.board .duration > button:hover {
-  background-color: var(--color-dark);
-  color: var(--color-light);
-}
-
-.active {
-  background-color: var(--color-dark);
-  color: var(--color-light);
-}
-
-#profile {
-  /* display: flex; */
-
+.flex {
   margin-top: 3em;
-}
-
-#profile .flex {
   display: flex;
   justify-content: space-between;
   gap: 1em;
@@ -56,17 +28,19 @@
   margin-bottom: 2em;
 }
 
-#profile .flex .item {
+.flex .item {
   display: flex;
   align-items: center;
 }
 
-#profile .flex img {
-  width: 20%;
-  border-radius: 50%;
+.flex img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
 }
 
-#profile .flex .info {
+.flex .info {
   padding: 1em;
 }
 
