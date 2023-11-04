@@ -1,8 +1,13 @@
 :root {
+  margin-top: 80px;
   --color-dark: #0050a0;
   --color-light: #f3f3f2;
+  font-family: "Geologica-medium", sans-serif;
 }
 
+h1 {
+  font-weight: bolder;
+}
 #main {
   display: flex;
   justify-content: center;
