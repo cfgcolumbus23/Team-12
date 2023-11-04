@@ -5,7 +5,7 @@
   padding: 20px;
 }
 
-.text {
+* > * {
   font-family: "Geologica-medium", sans-serif;
   color: #fff;
 }
