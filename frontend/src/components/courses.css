@@ -120,10 +120,22 @@
     transform: scale(1.05); /* Scale up on hover */
 }
 @media (max-width: 767px) {
+    .courseCategory{
+        height:10%;
+        font-size:10px;
+    }
+    .courseCategory2{
+        height:10%;
+        font-size:10px;
+    }
     #popUpContent{
         font-size:10px;
     }
     #popUpCompleteButton{
         font-size:10px;
+    }
+    #coursesContentContainer{
+        gap:10px;
+        height:60%;
     }
     }
