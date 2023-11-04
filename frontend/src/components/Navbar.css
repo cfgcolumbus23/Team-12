@@ -24,7 +24,13 @@
     fill: #a2d5f2; /* Lighter blue color */
   }
   
-  
+  #menuLabel{
+    left:5%;
+    position:absolute;
+    font-family:'geologica-extrabold';
+    font-size:18px;
+    top:16px;
+  }
   #navBarLogo{
     max-height:50px;
     width:auto;
