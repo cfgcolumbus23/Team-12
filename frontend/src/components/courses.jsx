@@ -77,12 +77,12 @@ const Training = () => {
   return (
     <div id = "coursesContainer">
         <div id = "coursesContentContainer">
-            <div className = {basicMarked?"courseCategory":"courseCategory"} id = "firstCourseCategory" onClick={()=>handleCategoryClick("basic")}>Basic Work Readiness</div>
-            <div className = {basicMarked?"courseCategory":"courseCategory"} onClick={()=>handleCategoryClick("digital")}>Digital Literacy</div>
-            <div className = {basicMarked?"courseCategory":"courseCategory"} onClick={()=>handleCategoryClick("information")}>Information Technology</div>
-            <div className = {basicMarked?"courseCategory":"courseCategory"} onClick={()=>handleCategoryClick("healthcare")}>Healthcare</div>
-            <div className = {basicMarked?"courseCategory":"courseCategory"} onClick={()=>handleCategoryClick("hospitality")}>Hospitality</div>
-            <div className = {basicMarked?"courseCategory":"courseCategory"} onClick={()=>handleCategoryClick("logistics")}>Logistics</div>
+            <div className = {basicMarked?"courseCategory2":"courseCategory"} id = "firstCourseCategory" onClick={()=>handleCategoryClick("basic")}>Basic Work Readiness</div>
+            <div className = {digitalMarked?"courseCategory2":"courseCategory"} onClick={()=>handleCategoryClick("digital")}>Digital Literacy</div>
+            <div className = {informationMarked?"courseCategory2":"courseCategory"} onClick={()=>handleCategoryClick("information")}>Information Technology</div>
+            <div className = {healthcareMarked?"courseCategory2":"courseCategory"} onClick={()=>handleCategoryClick("healthcare")}>Healthcare</div>
+            <div className = {hospitalityMarked?"courseCategory2":"courseCategory"} onClick={()=>handleCategoryClick("hospitality")}>Hospitality</div>
+            <div className = {logisticsMarked?"courseCategory2":"courseCategory"} onClick={()=>handleCategoryClick("logistics")}>Logistics</div>
         </div>
         {popUpOpen ? showCategoryPopUp(popUpCategory):<></>}
         <Navbar/>
