@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./leaderboard.css";
-
+import Navbar from "./components/Navbar";
 const data = [
   {
     name: "2550 N High Street",
@@ -38,6 +38,7 @@ const Leaderboard = () => {
   const sortedData = [...data].sort((a, b) => b.score - a.score);
   return (
     <div className="board">
+      <Navbar />
       <h1 className="leaderboard">Leaderboard</h1>
       <ul>
         <>
