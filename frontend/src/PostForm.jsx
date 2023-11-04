@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import './PostForm.css'; // Make sure the path is correct
 
 function PostForm({ closeForm }) {
+  // State variables to manage the form fields
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [image, setImage] = useState(null);
 
+  // Function to handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData();
@@ -16,6 +18,7 @@ function PostForm({ closeForm }) {
     }
 
     try {
+      // Send a POST request to the API endpoint
       const response = await fetch('/api/post', {
         method: 'POST',
         body: formData,
@@ -30,9 +33,9 @@ function PostForm({ closeForm }) {
       // Here you would add logic to refresh the posts list if needed
 
       const newPost = await response.json();
-      console.log('Success:', newPost);
+      console.log('Success:', newPost); // Log the new post data
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error:', error); //Log any errors
     }
   };
 
