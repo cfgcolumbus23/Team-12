@@ -1,5 +1,9 @@
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+import Navbar from './components/Navbar'
+import Popup from './components/Popup'
 import React, { useState, useEffect } from 'react';
-import Navbar from './components/Navbar';
 import './App.css';
 import PostFrom from './PostForm.jsx';
 
@@ -27,6 +31,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <Popup/>
       <div className="admin-panel">
         <button onClick={() => setShowForm(true)}>Add New Post</button> {/* Button to show form */}
       </div>
