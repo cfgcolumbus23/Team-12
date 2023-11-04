@@ -1,4 +1,4 @@
-# Team-12
+# Team-12 - Goodwill
 # Our Solution: goodfeed
 An interactive web platform built for Goodwill staff to incentivize engagment, awareness, and enrollment in job training and employment opportunities. 
 
