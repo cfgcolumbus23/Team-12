@@ -1,10 +1,11 @@
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
-import Navbar from './components/Navbar'
 import Popup from './components/Popup'
+import './newsletter.css'
+import Navbar from './components/Navbar'
+
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import './newsletter.css';
 import PostForm from './PostForm.jsx';
 
 function newsletter() {

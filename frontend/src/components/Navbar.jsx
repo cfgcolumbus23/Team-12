@@ -75,7 +75,7 @@ const Navbar = () => {
             <div
               className="sideMenuItem"
               id="sideMenuItem2"
-              onClick={() => handleMenuItemClick("/")}
+              onClick={() => handleMenuItemClick("/newsletter")}
             >
               <h1 className="sideMenuItemText">Newsletter</h1>
               <img className="icon" src="news.svg" />
