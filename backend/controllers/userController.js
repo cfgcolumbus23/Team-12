@@ -1,4 +1,6 @@
+require('dotenv').config();
 const User = require('../models/user.js');
+const {comparePassword} = require('../helpers/passwordComparer');
 
 const registerUser = async (req, res) => {
     const {name, email, password, employeeID} = req.body;
@@ -37,16 +39,43 @@ const registerUser = async (req, res) => {
 }
 
 const loginUser = async (req, res) => {
-    const {employeeID, password} = req.body;
-    // Check if employee id exists
-    const user = await User.findOne({ employeeID });
-    if (!user) {
-        return res.json({
-            error: "No user found"
-        });
+    try {
+        const {employeeID, password} = req.body;
+        // Check if user entered employeeID and password
+        if (!employeeID) {
+            return res.json({
+                error: "Employee ID is required"
+            });
+        }
+        if (!password) {
+            return res.json({
+                error: "Password is required"
+            });
+        }
+        // Check if employee id exists
+        const user = await User.findOne({ employeeID });
+        if (!user) {
+            return res.json({
+                error: "No user found"
+            });
+        }
+    
+        // Check if password matches user password
+        const match = await comparePassword(password, user.password);
+        if (match) {
+            console.log("Success");
+            res.json("Success");
+        } else {
+            res.json({
+                error: "Wrong password"
+            })
+        }
+    } catch (error) {
+        console.log(error)
     }
 }
 
 module.exports = {
     registerUser,
+    loginUser,
 }
