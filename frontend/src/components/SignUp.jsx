@@ -29,7 +29,7 @@ const SignUp = () => {
               } else {
                 setData({});
                 window.alert('Registration Successful, Welcome!');
-                navigate('/sign');
+                navigate('/signin');
               }
             } catch (error) {
               console.log(error);

@@ -42,8 +42,9 @@ const Navbar = () => {
   return (
     <div>
       <div id="navBarMain">
-        <img id="navBarLogo" src="logo.webp" alt="Logo" onClick={() => handleMenuItemClick("/")} />
-        <div id="menu-and-bars-button" onClick={() => menuClicked()}>
+        <a href="http://localhost:5173/">
+        <img id="navBarLogo" src="logo.webp" alt="Logo" />
+        </a>
           <img
             id="navBarMenuIcon"
             src="three.svg"
