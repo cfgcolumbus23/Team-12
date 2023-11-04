@@ -9,13 +9,14 @@ import SignIn from "./components/login.jsx";
 import Training from "./components/courses.jsx";
 import Profile from "./components/Profile.jsx";
 import Leaderboard from "./leaderboard.jsx";
+import Homepage from "./Homepage.jsx"
 import "./index.css";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />}></Route>
+      <Route path="/" element={<Homepage />}></Route>
       <Route path="/messages" element={<Messaging />}></Route>
       <Route path="/feedback" element={<Feedback />}></Route>
       <Route path="/signIn" element={<SignIn />}></Route>
