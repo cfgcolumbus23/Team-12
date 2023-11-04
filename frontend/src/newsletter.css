@@ -16,7 +16,24 @@
   
   /* App.css updates for a professional Add New Post button */
 
-.admin-panel button {
+.admin-panel1 button {
+    visibility: hidden;
+    padding: 10px 25px; /* Slightly larger horizontal padding for a wider button */
+    font-size: 16px; /* Standard readable size, could adjust based on overall design */
+    font-weight: 500; /* Medium font weight for clarity */
+    background-color: #f5f5f5; /* A light gray background */
+    color: #333333; /* A dark gray to contrast with the button's light background */
+    border: 1px solid #dcdcdc; /* A subtle border that's not too stark */
+    border-radius: 3px; /* Just slightly rounded corners for a modern look */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for multiple properties */
+    display: inline-block; /* Inline-block for better control over button placement */
+    text-align: center; /* Ensures text is centered */
+    margin: 0; /* Reset margin to 0 */
+    text-transform: uppercase; /* Optional: makes the button text uppercase for emphasis */
+    letter-spacing: 0.05em; /* Spacing out letters for a more refined appearance */
+  }
+  .admin-panel button {
     padding: 10px 25px; /* Slightly larger horizontal padding for a wider button */
     font-size: 16px; /* Standard readable size, could adjust based on overall design */
     font-weight: 500; /* Medium font weight for clarity */
@@ -45,5 +62,4 @@
     outline: none;
     box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Keeping the focus indicator for accessibility */
   }
-  
   

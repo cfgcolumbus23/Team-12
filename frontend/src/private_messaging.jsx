@@ -19,13 +19,12 @@ function App() {
     "Alexa",
     "Mithra",
     "Reegan",
-    "person3",
   ];
 
   // State for error messages
   const [errorMessage, setErrorMessage] = useState("");
 
-  const currentUser = "person1";
+  const currentUser = "Tyler";
 
   const handleSendMessage = () => {
     if (message) {

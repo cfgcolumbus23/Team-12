@@ -49,9 +49,10 @@ const Navbar = () => {
             id="navBarMenuIcon"
             src="three.svg"
             alt="Menu Icon"
-            onClick={() => menuClicked()} //this fcn toggles the menuOpen state
           />
           <div id = "menuLabel">Menu</div>
+        </div>
+          
 
         {renderEitherLoginRegisterOrProfilePicture()}
       </div>
