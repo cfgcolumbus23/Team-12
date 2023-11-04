@@ -63,11 +63,13 @@ const Training = () => {
             "hospitality":"Customer Service Gold, Rise Up Retail, Front Desk Attendant, Guest Room Attendant, Kitchen Cook, Food Server\n\nClasses can be completed remotely in as little 1 week per credential",
             "logistics":"Commercial Driver Training (Roads2Work) with Capital Transportation Academy\n\nFree training for a Class A CDL\n\n Graduates are eligible for roles offering $60K/year + benefits\n\nMust pass a physical and drug screen\n\nTraining will be completed in 5-to-6 weeks"
         }
+        // creates new lines in hash content when a \n is found
         const contentLines = categoryContentHash[category].split('\n')
         const contentWithBreaks = contentLines.map((line, index) => <div key={index}>{line} <br/></div>)
 
         if(popUpOpen){
             // shows translucent background with popup showing information on clicked category
+            // only renders if a category box is clicked
             return(
                 <>
                 <div id = "popUpCompleteButton" onClick = {() => handleMarkCompleteClick(category)}>Mark Complete</div>
@@ -82,6 +84,7 @@ const Training = () => {
         }
     }
     function handleCategoryClick(category){
+      // a category box is clicked and a popup is opened with the correct category in order to provide the correct information
         setPopUpOpen(true)
         setPopUpCategory(category)
     }
