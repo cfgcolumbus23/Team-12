@@ -8,30 +8,43 @@ const SignIn = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const isNumeric = (str) => {
-    // Use a regular expression to check if the string contains only numeric characters
-    return /^\d+$/.test(str);
+  const [isFormValid, setIsFormValid] = useState(false);
+
+  const isNumeric = (str) => /^\d+$/.test(str);
+
+  const handleEmployeeIDChange = (e) => {
+    const value = e.target.value;
+    setEmployeeID(value);
+
+    if (isNumeric(value) && value.trim() !== '' && password.trim() !== '') {
+      setIsFormValid(true);
+      setError('');
+    } else {
+      setIsFormValid(false);
+      setError('Employee ID must contain only numbers and both fields are required');
+    }
+  };
+
+  const handlePasswordChange = (e) => {
+    const value = e.target.value;
+    setPassword(value);
+
+    if (isNumeric(employeeID) && employeeID.trim() !== '' && value.trim() !== '') {
+      setIsFormValid(true);
+      setError('');
+    } else {
+      setIsFormValid(false);
+      setError('Employee ID must contain only numbers and both fields are required');
+    }
   };
 
   const handleSignIn = () => {
-    if (employeeID.trim() === "") {
-      setError("Employee ID is required");
-      return;
+    if (isFormValid) {
+      // Perform the sign-in logic here
+      alert(`Employee ID: ${employeeID}\nPassword: ${password}`);
+    } else {
+      setError('Please fill in both fields and ensure that the Employee ID contains only numbers.');
     }
-
-    if (password.trim() === "") {
-      setError("Password is required");
-      return;
-    }
-
-    if (!isNumeric(employeeID)) {
-      setError("Employee ID must contain only numbers");
-      return;
-    }
-
-    // If validation passes, you can proceed with the sign-in logic here
-    // For now, we'll just show an alert with the input values
-    // alert(`Employee ID: ${employeeID}\nPassword: ${password}`);
   };
 
   return (
