@@ -22,7 +22,7 @@ const Feedback = () => {
     const rules = {
       preferredName: /^[A-Za-z\s]+$/,
       id: /^[0-9]+$/,
-      email: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+      email: /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]/,
     };
     const is_Valid = rules[name].test(value);
     setErrors({
@@ -39,8 +39,9 @@ const Feedback = () => {
   };
 
   return (
-    <div className="form">
+    <div class="form">
       <h2> Contact Us </h2>
+      <h3> Include Name, ID, Email for personal concerns or requests </h3>
       <div className="form-input-sections">
         <div className="preferredName">
           <label className="form-label" htmlFor="preferredName">
@@ -54,7 +55,6 @@ const Feedback = () => {
             value={formData.preferredName}
             onChange={handleInput}
             placeholder="Preferred Name"
-            required
           />
           <div className="error">{errors.preferredName}</div>
         </div>
@@ -70,7 +70,6 @@ const Feedback = () => {
             value={formData.id}
             onChange={handleInput}
             placeholder="Employee ID"
-            required
           />
           <div className="error">{errors.id}</div>
         </div>
@@ -80,13 +79,12 @@ const Feedback = () => {
           </label>
           <input
             className="form-input"
-            type="email"
+            type="text"
             id="email"
             name="email"
             value={formData.email}
             onChange={handleInput}
             placeholder="Email"
-            required
           />
           <div className="error">{errors.email}</div>
         </div>
@@ -102,6 +100,7 @@ const Feedback = () => {
             value={formData.Comments}
             onChange={handleInput}
             placeholder="Comments"
+            required
           />
         </div>
       </div>
