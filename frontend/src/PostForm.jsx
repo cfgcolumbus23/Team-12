@@ -63,6 +63,7 @@ function App() {
       setContent('');
       setImage(null);
       setErrorMessage('');
+      setShowForm(false); // Hide the form after adding the post
     } else {
       setErrorMessage('Please fill out both title and content before submitting.');
     }
