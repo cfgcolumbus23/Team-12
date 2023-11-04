@@ -1,31 +1,42 @@
-import React, { useState } from 'react';
-import './private_messaging.css';
-import Navbar from './components/Navbar';
+import React, { useState } from "react";
+import "./private_messaging.css";
+import Navbar from "./components/Navbar";
 
 function App() {
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
   const [showContacts, setShowContacts] = useState(false);
-  const [selectedContact, setSelectedContact] = useState('');
-  const [searchValue, setSearchValue] = useState('');
-  const contacts = ['Tyler', 'Sophie', 'Abdul', 'Arnnov', 'Alexa', 'Mythra', 'Reegan'];
-  const [errorMessage, setErrorMessage] = useState('');
+  const [selectedContact, setSelectedContact] = useState("");
+  const [searchValue, setSearchValue] = useState("");
+  const contacts = [
+    "Tyler",
+    "Sophie",
+    "Abdul",
+    "Arnnov",
+    "Alexa",
+    "Mithra",
+    "Reegan",
+  ];
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSendMessage = () => {
     if (selectedContact) {
       if (message) {
-        setMessages([...messages, { text: message, direction: 'sent' }]);
-        setMessage('');
+        setMessages([...messages, { text: message, direction: "sent" }]);
+        setMessage("");
       }
-      setErrorMessage(''); 
+      setErrorMessage("");
     } else {
-      setErrorMessage('Please select a contact before sending.'); 
+      setErrorMessage("Please select a contact before sending.");
     }
   };
 
   const handleReceiveMessage = () => {
-    const receivedMessage = 'Received message example';
-    setMessages([...messages, { text: receivedMessage, direction: 'received' }]);
+    const receivedMessage = "Received message example";
+    setMessages([
+      ...messages,
+      { text: receivedMessage, direction: "received" },
+    ]);
   };
 
   const toggleContacts = () => {
@@ -38,9 +49,9 @@ function App() {
 
   const handleContactSelect = (contact) => {
     setSelectedContact(contact);
-    setSearchValue('');
+    setSearchValue("");
     setMessages([]);
-    setErrorMessage(''); 
+    setErrorMessage("");
   };
 
   const filteredContacts = contacts.filter((contact) =>
@@ -57,18 +68,24 @@ function App() {
       <body className="message-body">
         <div className="app-container">
           <Navbar />
-          <button className="showContacts" onClick={toggleContacts}>Show Contacts</button>
+          <button className="showContacts" onClick={toggleContacts}>
+            Show Contacts
+          </button>
           <div className="centered message-div">
             <div id="allMessages" className="scrollable-container message-div">
               {messages.map((msg, index) => (
                 <div
                   key={index}
-                  className={`message ${msg.direction === 'sent' ? 'sentMessage' : 'receivedMessage'}`}
+                  className={`message ${
+                    msg.direction === "sent" ? "sentMessage" : "receivedMessage"
+                  }`}
                 >
                   {msg.text}
                 </div>
               ))}
-              {errorMessage && <div className="error-message">{errorMessage}</div>}
+              {errorMessage && (
+                <div className="error-message">{errorMessage}</div>
+              )}
             </div>
             <div className="send-div">
               <input
@@ -82,9 +99,7 @@ function App() {
               <button onClick={handleReceiveMessage}>receive</button>
             </div>
           </div>
-          <div>
-            
-          </div>
+          <div></div>
           {showContacts && (
             <div className="contacts">
               <button onClick={toggleContacts}>Hide Contacts</button>
