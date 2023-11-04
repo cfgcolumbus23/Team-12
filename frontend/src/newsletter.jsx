@@ -1,5 +1,14 @@
+<<<<<<< HEAD
 import Navbar from './components/Navbar.jsx'
 import Popup from './components/Popup.jsx'
+=======
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import Popup from './components/Popup'
+import './newsletter.css'
+import Navbar from './components/Navbar'
+
+>>>>>>> 7ee65c5ca71493120a45d16d509a7be7c4f9ac13
 import React, { useState, useEffect } from 'react';
 import './newsletter.css';
 import PostForm from './PostForm.jsx';
