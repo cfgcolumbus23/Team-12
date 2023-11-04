@@ -1,0 +1,65 @@
+/* App.css */
+
+/* Existing styles ... */
+
+.navbar {
+    position: relative;
+    z-index: 10; /* Ensures the navbar is above other content */
+  }
+  
+  .admin-panel {
+    width: 100%; /* Full width of its container */
+    position: relative; /* Adjust if necessary to position the admin panel below the navbar */
+    z-index: 7; /* Below the navbar but above other content */
+    padding-top: 65px; /* Gives some space below the navbar */
+  }
+  
+  /* App.css updates for a professional Add New Post button */
+
+.admin-panel1 button {
+    visibility: hidden;
+    padding: 10px 25px; /* Slightly larger horizontal padding for a wider button */
+    font-size: 16px; /* Standard readable size, could adjust based on overall design */
+    font-weight: 500; /* Medium font weight for clarity */
+    background-color: #f5f5f5; /* A light gray background */
+    color: #333333; /* A dark gray to contrast with the button's light background */
+    border: 1px solid #dcdcdc; /* A subtle border that's not too stark */
+    border-radius: 3px; /* Just slightly rounded corners for a modern look */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for multiple properties */
+    display: inline-block; /* Inline-block for better control over button placement */
+    text-align: center; /* Ensures text is centered */
+    margin: 0; /* Reset margin to 0 */
+    text-transform: uppercase; /* Optional: makes the button text uppercase for emphasis */
+    letter-spacing: 0.05em; /* Spacing out letters for a more refined appearance */
+  }
+  .admin-panel button {
+    padding: 10px 25px; /* Slightly larger horizontal padding for a wider button */
+    font-size: 16px; /* Standard readable size, could adjust based on overall design */
+    font-weight: 500; /* Medium font weight for clarity */
+    background-color: #f5f5f5; /* A light gray background */
+    color: #333333; /* A dark gray to contrast with the button's light background */
+    border: 1px solid #dcdcdc; /* A subtle border that's not too stark */
+    border-radius: 3px; /* Just slightly rounded corners for a modern look */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition for multiple properties */
+    display: inline-block; /* Inline-block for better control over button placement */
+    text-align: center; /* Ensures text is centered */
+    margin: 0; /* Reset margin to 0 */
+    text-transform: uppercase; /* Optional: makes the button text uppercase for emphasis */
+    letter-spacing: 0.05em; /* Spacing out letters for a more refined appearance */
+  }
+  
+  .admin-panel button:hover {
+    background-color: #e6e6e6; /* A slightly darker shade of gray for the hover state */
+    color: #0056b3; /* Change text color to a professional blue */
+    border-color: #c6c6c6; /* Darker border color on hover for contrast */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  }
+  
+  .admin-panel button:focus,
+  .admin-panel button:active {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Keeping the focus indicator for accessibility */
+  }
+  

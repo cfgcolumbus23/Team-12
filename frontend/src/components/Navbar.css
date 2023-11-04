@@ -1,0 +1,173 @@
+#navBarMain {
+  background-color: rgb(28,117,188); /* Set the background color */
+  color: #fff; /* Set the text color */
+  width:100%;
+  position:absolute;
+  height:60px;
+  left:0;
+  top:0;
+  overflow-x:hidden;
+  overflow-y:hidden;
+}
+#navBarMenuIcon{
+  min-height:40px;
+  width:auto;
+  fill:white;
+  left:20px;
+  top:6px;
+  position:absolute;
+  transition: fill 0.3s ease; 
+  /*smooth transition for the fill color */
+}
+
+#navBarMenuIcon:hover {
+  fill: #a2d5f2; /* Lighter blue color */
+}
+
+#menuLabel{
+  left:5%;
+  position:absolute;
+  font-family:'geologica-extrabold';
+  font-size:18px;
+  top:16px;
+}
+#navBarLogo{
+  max-height:50px;
+  width:auto;
+  left:48%;
+  top:6px;
+  position:absolute;
+  transition: transform 0.5s;
+}
+#navBarLogo:hover{
+  transform: scale(1.05);
+}
+#sideBarOpen{
+  position:absolute;
+  left:0;
+  top:0;
+  width:25%;
+  height:100%;
+  background-color:rgb(28,117,188);
+  border-right-color:rgb(10, 53, 87);
+  border-right-style:solid;
+  border-right-width:2px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  display: flex; /*use flex layout */
+  flex-direction: column; /*stack children vertically */
+  justify-content: flex-start; /* Align children to the top */
+  align-items: center; /* Center children horizontally */
+  transition: transform 0.3s ease; /* Add transition for smooth opening */
+}
+
+/* When menu is not opened, it should be translated to the left out of view */
+#sideBarOpen.closed {
+transform: translateX(-100%);
+}
+
+/* When menu is opened, it should translate back to its original position */
+#sideBarOpen.open {
+transform: translateX(0);
+}
+
+#sideMenuItemContainers{
+  position:relative;
+  height:100%;
+  margin-right: 40px;
+  top:75px;
+}
+.sideMenuItem{
+  height:90px;
+  width:130%; /* MADE CHANGE HERE */
+
+  font-family: "geologica-extrabold";
+  color:white;
+  font-size:20px;
+  padding-top:5px;
+  
+  border-color:rgb(28,117,188);
+  border-width:1px;
+  border-bottom-style:solid;
+  
+  text-align: left;
+  
+}
+.sideMenuItemText{
+  font-family: "geologica-extrabold";
+  color:white;
+  font-size:20px;
+  margin-left:5px;
+}
+.sideMenuItem:hover{
+  background-color:rgb(10, 53, 87);
+  transition:0.4s;
+
+}
+#sideMenuItem1{
+  border-top-style:solid;
+}
+#navBarProfilePicture{
+  left:90%;
+  top:6px;
+  position:absolute;
+  height:50px;
+  width:auto;
+}
+#loginRegisterContainer{
+  position:absolute;
+  width:20%;
+  left:80%;
+  height:60px;
+}
+
+.loginRegisterItem {
+  display: inline-block;
+  color:white;
+  text-decoration:none;
+  font-family:'Geologica-extrabold';
+  margin-right: 10px; /* Adjust as needed */
+  padding-top: 15px;
+  padding-bottom: 15px;
+  transition:text-shadow 0.3s ease;
+}
+
+.loginRegisterItem:hover {
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.75);
+}
+
+.icon{
+  height:40px;
+  width:auto;
+  margin-left:80%;
+  margin-top:-50%;
+  
+  
+}
+
+h2 {
+color: #fff;
+margin-top: 10px;
+}
+
+.menu-and-bars-button {
+  transition: transform 0.5s;
+}
+
+.menu-and-bars-button:hover {
+  transform: scale(1.05);
+}
+
+
+@media (max-width: 767px) {
+  .sideMenuItemText{
+      font-size:12px;
+  }
+
+  .icon {
+      height:20px;
+      width:auto;
+      margin-left:60%;
+      margin-top:-20%;
+  }
+}

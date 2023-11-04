@@ -1,0 +1,134 @@
+/* PostForm.css */
+.post-form-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly darker backdrop */
+    z-index: 1000;
+  }
+  
+  .post-form-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px; /* More pronounced border radius */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* More dramatic shadow */
+    width: 90%; /* Responsive width */
+    max-width: 600px; /* Larger max width for better use of space */
+    margin: auto;
+    transition: transform 0.3s ease-out; /* Animated entry */
+  }
+  
+  .post-form-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .post-form input[type="text"],
+  .post-form textarea,
+  .post-form input[type="file"] {
+    width: calc(100% - 20px); /* Account for padding */
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #d1d1d1; /* Lighter border */
+    border-radius: 5px; /* Smoother border radius */
+    font-size: 16px; /* Larger font for better readability */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+  }
+  
+  .post-form textarea {
+    height: 200px; /* Larger default size for content field */
+    resize: vertical;
+  }
+  
+  .post-form input[type="file"] {
+    padding: 0;
+    border: none;
+  }
+  
+  .post-form label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .post-form button {
+    padding: 12px 25px; /* Larger buttons */
+    margin-top: 10px;
+    margin-right: 0; /* Align buttons to form width */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    font-size: 16px; /* Larger font for buttons */
+    font-weight: bold; /* Bold font for better visibility */
+    transition: background-color 0.2s ease; /* Smooth transition for background color */
+  }
+  
+  .post-form button[type="submit"] {
+    background-color: #007bff; /* Success green for submit */
+    color: white;
+  }
+  
+  .post-form button[type="button"] {
+    background-color: #6c757d;
+    /* Danger red for cancel */
+    color: white;
+    border: 1px solid #6c757d;
+  }
+  
+  .post-form button:hover {
+    filter: brightness(90%); /* Slight darkening on hover */
+  }
+  
+  .post-form button:focus {
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* More pronounced focus shadow */
+  }
+  
+  /* Adding an animation to show the form smoothly */
+  @keyframes slideIn {
+    from {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .post-form-container {
+    animation: slideIn 0.3s ease-out forwards;
+  }
+  .post {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 5px;
+    border: solid 3px rgb(28,117,188);
+    width: 75vw;
+  }
+  .post h2 {
+    margin: 5px;
+  }
+  .post p {
+    margin: 5px;
+  }
+  .post img {
+    margin: 5px;
+    max-width: 50%;
+  }
+  .comment-button {
+    width: 175px; 
+    height: 30px;
+    font-size: 12px !important; 
+    padding: 0px !important;
+  }

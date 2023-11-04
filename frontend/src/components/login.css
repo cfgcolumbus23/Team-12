@@ -1,0 +1,117 @@
+/* body{
+    background: white;  
+}
+
+.form{
+    border-radius: 10px;
+    width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.form-input-sections{
+    text-align: left;
+    padding: 20px 10px;
+}
+
+.form-input-sections > *{
+    padding: 10px;
+}
+
+.form__label{
+    width: 40%;
+}
+
+.form_input{
+    width: 60%;
+}
+
+.buttonDiv{
+    text-align: center;
+} */
+
+/* Reset default margin and padding for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Geologica-medium", sans-serif;
+}
+
+/* Set a background color that matches Goodwill's style */
+body {
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+h2,
+h3 {
+  text-align: center;
+  color: #0050a0;
+  margin-bottom: 20px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 16px;
+}
+/* Style the form container */
+.form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Style the form sections */
+.form-input-sections {
+  margin-top: 10px;
+}
+
+/* Style the labels for input fields */
+.form-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #0056b3; /* darker blue */
+}
+
+/* Style the input fields */
+.form-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Style the error message */
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+/* Style the Sign In button */
+.buttonDiv {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.button {
+  background-color: #007bff; /* Goodwill's blue color */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.5s;
+}
+
+.button:hover {
+  background-color: #0056b3; /* Darker blue for hover effect */
+}

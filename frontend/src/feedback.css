@@ -1,0 +1,59 @@
+.form {
+  background-color: #0050a0;
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+* > * {
+  font-family: "Geologica-medium", sans-serif;
+}
+
+.form-input-sections {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-weight: bold;
+  font-size: 14pt;
+  color: #0050a0;
+}
+.error {
+  color: red;
+}
+h2,
+h3 {
+  text-align: center;
+  color: #0050a0;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  margin-top: 10px;
+  font-size: 20px;
+}
+.form-input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 10px;
+  font-size: 18px;
+  margin-top: 5px;
+  color: #0050a0;
+}
+
+.button {
+  background-color: #0050a0;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.button:hover {
+  box-shadow: 0 12px 16px 0 #fff, 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
