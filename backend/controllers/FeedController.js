@@ -13,9 +13,11 @@ const isAuthenticated = (req, res, next) => {
 };
 
 // POST endpoint to create a new post (any authenticated user)
-router.post("/post", async (req, res) => {
-  console.log("DATALKSJFKSF", req);
+//router.post("/post", async (req, res) => {
+const post = async (req, res) => {
+console.log("DATALKSJFKSF", req);
   try {
+    console.log("Received POST request to create a new post");
     const newPost = new Post({
       title: req.body.title,
       content: req.body.content,
@@ -27,11 +29,13 @@ router.post("/post", async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
-});
+};
 
 // POST endpoint to comment on a post (any authenticated user)
-router.post("/post/:postId/comment", isAuthenticated, async (req, res) => {
-  try {
+
+//router.post("/post/:postId/comment", isAuthenticated, async (req, res) => {
+const postComment = async (req, res) => {
+try {
     const post = await Post.findById(req.params.postId);
     if (!post) {
       return res.status(404).send("Post not found");
@@ -51,6 +55,19 @@ router.post("/post/:postId/comment", isAuthenticated, async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
-});
+};
 
-module.exports = router;
+const getPosts = async (req, res) => {
+  try {
+    const posts = await Post.findOne();
+    res.status(200).json(posts);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+module.exports = {
+  post,
+  postComment,
+  getPosts
+}

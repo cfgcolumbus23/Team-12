@@ -6,7 +6,7 @@ import Navbar from './components/Navbar'
 import React, { useState, useEffect } from 'react';
 import './newsletter.css';
 import PostForm from './PostForm.jsx';
-
+import Popup from './components/Popup';
 function newsletter() {
   const [posts, setPosts] = useState([]);
   const [showForm, setShowForm] = useState(false);
@@ -28,12 +28,24 @@ function newsletter() {
   //   fetchPosts();
   // }, []);
 
+  useEffect(() => {
+    // Simulate button click by default when the page loads
+    setShowForm(true);
+  }, []);
+
   return (
     <>
       <Navbar />
-      <div className="admin-panel">
+      <Popup/>
+      <div className="admin-panel1">
         <button onClick={() => setShowForm(true)}>Add New Post</button> {/* Button to show form */}
       </div>
+
+      <div id = "postContainer">
+        
+      </div>
+
+
       {showForm && <PostForm closeForm={() => setShowForm(false)} />} {/* Conditionally render the form */}
       <div className="posts-container">
         {posts.map((post) => (
