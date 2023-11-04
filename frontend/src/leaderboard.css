@@ -3,10 +3,14 @@
   --color-dark: #0050a0;
   --color-light: #f3f3f2;
   font-family: "Geologica-medium", sans-serif;
+  color: #0050a0;
 }
 
 h1 {
   font-weight: bolder;
+  font-size: 30pt;
+  background-color: #0050a0;
+  color: white;
 }
 #main {
   display: flex;
