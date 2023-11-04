@@ -1,8 +1,11 @@
 const express = require("express");
-const { directMessage } = require("../controllers/directMessageController");
+const {
+  directMessage,
+  sendMessage,
+} = require("../controllers/messageController");
 const router = express.Router();
 
-// Auth Routes
-router.get("/message", directMessage);
-
+// Routes for messages
+router.get("/message_receive", directMessage);
+router.post("/send", sendMessage);
 module.exports = router;
