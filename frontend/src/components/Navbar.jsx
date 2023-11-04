@@ -55,7 +55,7 @@ const Navbar = () => {
           
 
         {renderEitherLoginRegisterOrProfilePicture()}
-      </div>
+      
       {menuOpen && (
         <div id="sideBarOpen" className={menuOpen ? 'open' 
       
