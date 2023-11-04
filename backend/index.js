@@ -4,6 +4,9 @@ const cors = require("cors");
 require("dotenv").config();
 const cookieParser = require("cookie-parser");
 const app = express();
+const http = require("http").createServer(app);
+// const io = require("socket.io")(http);
+// const messageChangeStream = Message.watch();
 
 // Database Connection
 mongoose
@@ -20,9 +23,11 @@ app.use(cors());
 // Routes
 app.use("/api", require("./routes/userRoutes"));
 app.use("/message", require("./routes/messageRoutes"));
-app.use("/feed", require("./controllers/FeedController"));
+//app.use("/feed", require("./controllers/feedcontroller"));
 
 // Port
 const port = process.env.PORT;
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));
+
+

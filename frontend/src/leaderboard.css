@@ -1,0 +1,59 @@
+:root {
+  margin-top: 80px;
+  --color-dark: #0050a0;
+  --color-light: #f3f3f2;
+  font-family: "Geologica-medium", sans-serif;
+  color: #0050a0;
+}
+
+h1 {
+  font-weight: bolder;
+  font-size: 30pt;
+  background-color: #0050a0;
+  color: white;
+}
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.board {
+  text-align: center;
+}
+
+.board .leaderboard {
+  margin-bottom: 20px;
+  margin-right: 20px;
+  margin-top: 60px;
+}
+
+.flex {
+  margin-top: 3em;
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+  text-align: left;
+  margin-bottom: 2em;
+}
+
+.flex .item {
+  display: flex;
+  align-items: center;
+}
+
+.flex img {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+}
+
+.flex .info {
+  padding: 1em;
+}
+
+.text-dark {
+  color: var(--color-dark);
+}

@@ -9,9 +9,16 @@ function App() {
   const [showContacts, setShowContacts] = useState(false);
   const [selectedContact, setSelectedContact] = useState("");
   const [searchValue, setSearchValue] = useState("");
-  const contacts = ["person1", "person2", "person3", "person4"];
-
-  const currentUser = "person1";
+  const contacts = [
+    "Tyler",
+    "Sophie",
+    "Abdel",
+    "Arnav",
+    "Alexa",
+    "Mithra",
+    "Reegan",
+  ];
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSendMessage = () => {
     if (message) {
@@ -131,9 +138,11 @@ function App() {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               />
-              <input type="submit" value="send" onClick={handleSendMessage} />
-              {/* <button onClick={handleReceiveMessage}>receive</button> */}
+              <input type="submit" value="Send Message" onClick={handleSendMessage} />
             </div>
+            <button className="showContacts" onClick={toggleContacts}>
+            Show Contacts
+          </button>
           </div>
           <div>
             <button onClick={toggleContacts}>Toggle Contacts</button>
