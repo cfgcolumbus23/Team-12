@@ -49,6 +49,7 @@ const Navbar = () => {
             alt="Menu Icon"
             onClick={() => menuClicked()} //this fcn toggles the menuOpen state
           />
+          <div id = "menuLabel">Menu</div>
 
         {renderEitherLoginRegisterOrProfilePicture()}
       </div>
