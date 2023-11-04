@@ -1,0 +1,32 @@
+body{
+    background: white;
+}
+
+.form{
+    border-radius: 5px;
+    width: 550px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: lightgray;
+}
+
+.form-input-sections{
+    text-align: left;
+    padding: 20px 10px;
+}
+
+.form-input-sections > *{
+    padding: 5px;
+}
+
+.form__label{
+    width: 40%;
+}
+
+.form_input{
+    width: 60%;
+}
+
+.buttonDiv{
+    text-align: center;
+}
