@@ -9,13 +9,14 @@ const SignIn = () => {
   const [error, setError] = useState("");
 
   const isNumeric = (str) => {
-    // Use a regular expression to check if the string contains only numeric characters
+    //check if the string contains only numeric characters
     return /^\d+$/.test(str);
   };
 
   const handleSignIn = () => {
+    //error control
     setIsFormValid(true);
-    
+
     if (employeeID.trim() === "") {
       setError("Employee ID is required");
       setIsFormValid(false);
@@ -34,9 +35,7 @@ const SignIn = () => {
       return;
     }
 
-    // If validation passes, you can proceed with the sign-in logic here
-    // For now, we'll just show an alert with the input values
-    // alert(`Employee ID: ${employeeID}\nPassword: ${password}`);
+    // sign-in logic proceeds
   };
 
   return (
