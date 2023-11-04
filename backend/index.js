@@ -23,11 +23,9 @@ app.use(cors());
 // Routes
 app.use("/api", require("./routes/userRoutes"));
 app.use("/message", require("./routes/messageRoutes"));
-//app.use("/feed", require("./controllers/feedcontroller"));
+app.use("/feed", require("./routes/feedRoutes"));
 
 // Port
 const port = process.env.PORT;
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));
-
-

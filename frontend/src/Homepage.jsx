@@ -1,5 +1,6 @@
 import React from 'react';
 import './Homepage.css';
+import Popup from './components/Popup'
 
 import Navbar from './components/Navbar';
 import { useNavigate } from 'react-router-dom';
@@ -38,6 +39,7 @@ const Homepage = () => {
   return (
     <>
       <Navbar />
+      <Popup />
       <div id="circleDiv">
         <div id="row1">
         
