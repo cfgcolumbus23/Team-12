@@ -7,9 +7,11 @@ import React, { useState, useEffect } from 'react';
 import './newsletter.css';
 import PostForm from './PostForm.jsx';
 import Popup from './components/Popup';
+import axios from 'axios';
 function newsletter() {
   const [posts, setPosts] = useState([]);
   const [showForm, setShowForm] = useState(false);
+  const [submissions, setSubmissions] = useState([])
 
   // useEffect(() => {
   //   const fetchPosts = async () => {
@@ -32,18 +34,39 @@ function newsletter() {
     // Simulate button click by default when the page loads
     setShowForm(true);
   }, []);
+  const getAllPosts = () =>{
+      axios.get('http://localhost:8000/feed/getposts')
+        .then(response => {
+          console.log('Response data:', response.data);
+          setSubmissions(response.data)
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
 
+  }
+  const mapSubmissions = () =>{
+    if(submissions != undefined){
+    return (
+      <div id = "submissionContainer">
+        <div id = "submissionHeader">{submissions.title}</div>
+      </div>
+    )
+    }
+  }
+  // /*{mapSubmissions()}
   return (
     <>
       <Navbar />
       <Popup/>
+      {getAllPosts()}
       <div className="admin-panel1">
         <button onClick={() => setShowForm(true)}>Add New Post</button> {/* Button to show form */}
       </div>
 
       <div id = "postContainer">
-        
       </div>
+
 
 
       {showForm && <PostForm closeForm={() => setShowForm(false)} />} {/* Conditionally render the form */}
