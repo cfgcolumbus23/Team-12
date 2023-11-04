@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./private_messaging.css";
 import Navbar from "./components/Navbar";
+import axios from "axios";
 
 function App() {
   // State variables to manage messages, user input, and contacts
@@ -18,22 +19,30 @@ function App() {
     "Alexa",
     "Mithra",
     "Reegan",
+    "person3",
   ];
 
   // State for error messages
   const [errorMessage, setErrorMessage] = useState("");
 
-  //Function to handle sending a message
+  const currentUser = "person1";
+
   const handleSendMessage = () => {
-    if (selectedContact) {
-      if (message) {
-        // Add a sent message to the conversation
-        setMessages([...messages, { text: message, direction: "sent" }]);
-        setMessage(""); // Clear the input field
-      }
-      setErrorMessage(""); // Clear any error messages
-    } else {
-      setErrorMessage("Please select a contact before sending.");
+    if (message) {
+      axios
+        .post("http://localhost:8000/message/send", {
+          senderId: currentUser,
+          receiverId: selectedContact,
+          content: message,
+        })
+        .then((response) => {
+          console.log("Response:", response.data);
+        })
+        .catch((error) => {
+          console.error("Error sending message:", error);
+        });
+      setMessages([...messages, { text: message, direction: "sent" }]);
+      setMessage("");
     }
   };
 
@@ -69,6 +78,47 @@ function App() {
     contact.toLowerCase().includes(searchValue.toLowerCase())
   );
 
+  useEffect(() => {
+    // Construct the URL with query parameters
+
+    const url = `http://localhost:8000/message/message_receive?senderId=${currentUser}&receiverId=${selectedContact}`;
+
+    // Fetch messages between two specific users using GET request with axios
+    axios
+      .get(url)
+      .then((response) => {
+        const transformedMessages = response.data.map((msg) => {
+          let direction;
+          if (msg.senderId === currentUser) {
+            direction = "sent";
+          } else if (msg.receiverId === currentUser) {
+            direction = "received";
+          }
+          return {
+            text: msg.content,
+            direction: direction,
+          };
+        });
+        setMessages(transformedMessages);
+        console.log("DATA RECEIVE", transformedMessages);
+      })
+      .catch((error) => {
+        if (error.response) {
+          // The request was made and the server responded with a status code
+          console.error("Server responded with:", error.response.data);
+          console.error("Status code:", error.response.status);
+        } else if (error.request) {
+          // The request was made but no response was received
+          console.error("No response received:", error.request);
+        } else {
+          // Something happened in setting up the request that triggered an Error
+          console.error("Error", error.message);
+        }
+      });
+
+    // If you have socket.io code, it can continue here
+  }, [selectedContact]); // Adding selectedContact as a dependency so the effect runs when its value changes
+
   return (
     <html lang="en">
       <head>
@@ -103,11 +153,15 @@ function App() {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               />
-              <input type="submit" value="Send Message" onClick={handleSendMessage} />
+              <input
+                type="submit"
+                value="Send Message"
+                onClick={handleSendMessage}
+              />
             </div>
             <button className="showContacts" onClick={toggleContacts}>
-            Show Contacts
-          </button>
+              Show Contacts
+            </button>
           </div>
           <div></div>
           {showContacts && (
