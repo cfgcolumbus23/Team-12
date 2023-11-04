@@ -1,25 +1,29 @@
-import React, { useState } from 'react';
-import './private_messaging.css';
-import Navbar from './components/Navbar';
+import React, { useState, useEffect } from "react";
+import "./private_messaging.css";
+import Navbar from "./components/Navbar";
+import axios from "axios";
 
 function App() {
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
   const [showContacts, setShowContacts] = useState(false);
-  const [selectedContact, setSelectedContact] = useState('');
-  const [searchValue, setSearchValue] = useState('');
-  const contacts = ['Contact 1', 'Contact 2', 'Contact 3', 'Contact 4'];
+  const [selectedContact, setSelectedContact] = useState("");
+  const [searchValue, setSearchValue] = useState("");
+  const contacts = ["person1", "person2", "person3", "person4"];
 
   const handleSendMessage = () => {
     if (message) {
-      setMessages([...messages, { text: message, direction: 'sent' }]);
-      setMessage('');
+      setMessages([...messages, { text: message, direction: "sent" }]);
+      setMessage("");
     }
   };
 
   const handleReceiveMessage = () => {
-    const receivedMessage = 'Received message example';
-    setMessages([...messages, { text: receivedMessage, direction: 'received' }]);
+    const receivedMessage = "Received message example";
+    setMessages([
+      ...messages,
+      { text: receivedMessage, direction: "received" },
+    ]);
   };
 
   const toggleContacts = () => {
@@ -32,9 +36,52 @@ function App() {
 
   const handleContactSelect = (contact) => {
     setSelectedContact(contact);
-    setSearchValue(''); // Clear the search bar after selection
+    console.log("new contact", contact);
+    setSearchValue(""); // Clear the search bar after selection
     setMessages([]); // Clear messages when a new contact is selected
   };
+
+  useEffect(() => {
+    // Construct the URL with query parameters
+    const currentUser = "person1";
+
+    const url = `http://localhost:8000/message/message_receive?senderId=${currentUser}&receiverId=${selectedContact}`;
+
+    // Fetch messages between two specific users using GET request with axios
+    axios
+      .get(url)
+      .then((response) => {
+        const transformedMessages = response.data.map((msg) => {
+          let direction;
+          if (msg.senderId === currentUser) {
+            direction = "sent";
+          } else if (msg.receiverId === currentUser) {
+            direction = "received";
+          }
+          return {
+            text: msg.content,
+            direction: direction,
+          };
+        });
+        setMessages(transformedMessages);
+        console.log("DATA RECEIVE", transformedMessages);
+      })
+      .catch((error) => {
+        if (error.response) {
+          // The request was made and the server responded with a status code
+          console.error("Server responded with:", error.response.data);
+          console.error("Status code:", error.response.status);
+        } else if (error.request) {
+          // The request was made but no response was received
+          console.error("No response received:", error.request);
+        } else {
+          // Something happened in setting up the request that triggered an Error
+          console.error("Error", error.message);
+        }
+      });
+
+    // If you have socket.io code, it can continue here
+  }, [selectedContact]); // Adding selectedContact as a dependency so the effect runs when its value changes
 
   const filteredContacts = contacts.filter((contact) =>
     contact.toLowerCase().includes(searchValue.toLowerCase())
@@ -55,7 +102,9 @@ function App() {
               {messages.map((msg, index) => (
                 <div
                   key={index}
-                  className={`message ${msg.direction === 'sent' ? 'sentMessage' : 'receivedMessage'}`}
+                  className={`message ${
+                    msg.direction === "sent" ? "sentMessage" : "receivedMessage"
+                  }`}
                 >
                   {msg.text}
                 </div>
@@ -77,7 +126,6 @@ function App() {
             <button onClick={toggleContacts}>Toggle Contacts</button>
           </div>
           {showContacts && (
-            
             <div className="contacts">
               <button onClick={toggleContacts}>Toggle Contacts</button>
               <input

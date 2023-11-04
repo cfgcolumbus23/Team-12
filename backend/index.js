@@ -6,6 +6,8 @@ const cookieParser = require("cookie-parser");
 const app = express();
 const http = require("http").createServer(app);
 const io = require("socket.io")(http);
+
+const Message = require("./models/messageModel");
 const messageChangeStream = Message.watch();
 
 // Database Connection
@@ -27,7 +29,7 @@ app.use("/message", require("./routes/messageRoutes"));
 // Port
 const port = process.env.PORT;
 
-app.listen(port, () => console.log(`Server is running on port ${port}`));
+// app.listen(port, () => console.log(`Server is running on port ${port}`));
 
 //socket code for messages
 io.on("connection", (socket) => {
@@ -37,8 +39,8 @@ io.on("connection", (socket) => {
   });
 });
 
-http.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+http.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
 
 messageChangeStream.on("change", (change) => {
