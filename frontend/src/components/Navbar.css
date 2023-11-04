@@ -68,7 +68,10 @@
 }
 #navBarProfilePicture{
     left:90%;
+    top:6px;
     position:absolute;
+    height:50px;
+    width:auto;
 }
   
 .icon{

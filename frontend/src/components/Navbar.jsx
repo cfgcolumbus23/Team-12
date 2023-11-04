@@ -26,7 +26,7 @@ const Navbar = () => {
         <Link to="/feedback">FEEDBACK</Link>
         <Link to="/signUp">SIGN UP</Link>
         <Link to="/signIn">SIGN IN</Link>
-        <div id = "navBarProfilePicture">profile picture</div>
+        <img id = "navBarProfilePicture" src="user.svg"/>
 
 
 
