@@ -52,6 +52,7 @@ const SignUp = () => {
 
   return (
     <div className="form">
+      <Navbar /> 
       <div className="form-input-sections">
         <Navbar />
         <h2> Register </h2>

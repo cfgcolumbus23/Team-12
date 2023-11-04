@@ -16,9 +16,12 @@
 
 .form-label {
   font-weight: bold;
+  font-size: 14pt;
   color: #0050a0;
 }
-
+.error {
+  color: red;
+}
 h2,
 h3 {
   text-align: center;
@@ -29,13 +32,13 @@ h2 {
 }
 h3 {
   margin-top: 10px;
-  font-size: 16px;
+  font-size: 20px;
 }
 .form-input {
   width: 100%;
   padding: 8px;
   border-radius: 10px;
-  font-size: 20px;
+  font-size: 18px;
   margin-top: 5px;
   color: #0050a0;
 }
