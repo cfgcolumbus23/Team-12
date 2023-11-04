@@ -22,7 +22,7 @@ const Feedback = () => {
     const rules = {
       preferredName: /^[A-Za-z\s]+$/,
       id: /^[0-9]+$/,
-      email: /@/,
+      email: /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]/,
     };
     const is_Valid = rules[name].test(value);
     setErrors({
