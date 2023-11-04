@@ -67,8 +67,8 @@ const Navbar = () => {
                 <h1 className = "sideMenuItemText">Newsletter</h1>
                 <img className = "icon" src="news.svg"/>
             </div>
-            <div className = "sideMenuItem" id = "sideMenuItem3" onClick = {()=>handleMenuItemClick("/")}>
-                <h1 className = "sideMenuItemText">Courses</h1>
+            <div className = "sideMenuItem" id = "sideMenuItem3" onClick = {()=>handleMenuItemClick("/training")}>
+                <h1 className = "sideMenuItemText">Training</h1>
                 <img className = "icon" src="board.svg"/>
             </div>
             <div className = "sideMenuItem" id = "sideMenuItem5" onClick = {()=>handleMenuItemClick("/messages")}>

@@ -89,6 +89,7 @@
     text-decoration:none;
     font-family:'Geologica-extrabold';
     margin-right: 10px; /* Adjust as needed */
+    margin-top:20px;
   }
   
 .icon{
@@ -96,4 +97,13 @@
     width:auto;
     margin-left:50%;
     margin-top:-20%;
+}
+@media (max-width: 767px) {
+    .sideMenuItemText{
+        font-size:12px;
+    }
+
+    .icon {
+        
+    }
 }
