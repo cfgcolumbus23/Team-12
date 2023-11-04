@@ -1,43 +1,39 @@
 .form {
-  background-color: #0050a0;
   width: 300px;
   margin: 0 auto;
   padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #0050a0;
 }
 
-* > * {
-  font-family: "Geologica-medium", sans-serif;
+.text {
+  font-family: "Geologica-medium";
+  src: local("Geologica-medium"), url(.) format("woff");
+  color: #fff;
 }
 
 .form-input-sections {
+  background-color: #0050a0;
   display: flex;
   flex-direction: column;
 }
 
 .form-label {
   font-weight: bold;
-  color: #0050a0;
 }
 
-h2,
-h3 {
+.h2 {
   text-align: center;
-  color: #0050a0;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  margin-top: 10px;
-  font-size: 16px;
+  color: #fff;
 }
 .form-input {
   width: 100%;
   padding: 8px;
-  border-radius: 10px;
-  font-size: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
   margin-top: 5px;
-  color: #0050a0;
 }
 
 .button {

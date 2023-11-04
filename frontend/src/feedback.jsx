@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./feedback.css";
-import Navbar from "./components/Navbar.jsx";
 
 const Feedback = () => {
   const [formData, setFormData] = useState({
@@ -23,14 +22,13 @@ const Feedback = () => {
     const rules = {
       preferredName: /^[A-Za-z\s]+$/,
       id: /^[0-9]+$/,
-      email: /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]/,
+      email: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
     };
     const is_Valid = rules[name].test(value);
     setErrors({
       ...errors,
       [name]: is_Valid ? "" : "Please enter valid input",
     });
-
     if (is_Valid) {
       setFormData({ ...formData, [name]: value }); //  copy w/ value updated
     }
@@ -41,10 +39,8 @@ const Feedback = () => {
   };
 
   return (
-    <div class="form">
-      <Navbar />
+    <div className="form">
       <h2> Contact Us </h2>
-      <h3> Include Name, ID, Email for personal concerns or requests </h3>
       <div className="form-input-sections">
         <div className="preferredName">
           <label className="form-label" htmlFor="preferredName">
@@ -58,6 +54,7 @@ const Feedback = () => {
             value={formData.preferredName}
             onChange={handleInput}
             placeholder="Preferred Name"
+            required
           />
           <div className="error">{errors.preferredName}</div>
         </div>
@@ -73,6 +70,7 @@ const Feedback = () => {
             value={formData.id}
             onChange={handleInput}
             placeholder="Employee ID"
+            required
           />
           <div className="error">{errors.id}</div>
         </div>
@@ -82,12 +80,13 @@ const Feedback = () => {
           </label>
           <input
             className="form-input"
-            type="text"
+            type="email"
             id="email"
             name="email"
             value={formData.email}
             onChange={handleInput}
             placeholder="Email"
+            required
           />
           <div className="error">{errors.email}</div>
         </div>
@@ -103,7 +102,6 @@ const Feedback = () => {
             value={formData.Comments}
             onChange={handleInput}
             placeholder="Comments"
-            required
           />
         </div>
       </div>

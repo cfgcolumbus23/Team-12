@@ -7,13 +7,12 @@ body {
     align-items: center;
 }
 .message-body {
-    margin-top: 40px;
+    margin-top: 60px;
     height: 75%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-right: 100px;
 }
 .centered {
     display: flex;
@@ -28,8 +27,6 @@ body {
     display: flex;
     justify-content: center;
     min-width: 213px;
-    height: 10vh;
-    width: 50vw;
 }
 .scrollable-container {
     max-height: 75%;
@@ -38,11 +35,9 @@ body {
     height: 70vh;
     display: flex;
     flex-direction: column;
-    border: solid black 1px;
-    width: 50vw;
 }
 .message-div {
-
+    border: solid black 1px;
     width: 50vw;
 }
 .sentMessage {
@@ -92,9 +87,8 @@ body {
   top: 0;
   height: 75vh;
   width: 200px;
+  border: 1px solid black;
   margin-top: 60px;
-  display: flex;
-  flex-direction: column;
 }
 .contactButton {
 	position: absolute;
@@ -103,15 +97,4 @@ body {
 }
 .contactButton:hover {
     background-color: #55555505;
-}
-.error-message {
-    color: red;
-    font-size: 16px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-.showContacts { 
-    position: absolute;
-    right: 0;
-    top: 60px;
 }

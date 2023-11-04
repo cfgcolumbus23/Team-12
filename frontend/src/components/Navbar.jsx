@@ -27,9 +27,6 @@ const Navbar = () => {
           <Link to="/signup" className="loginRegisterItem">
             Register
           </Link>
-          <Link to="/profile" className="loginRegisterItem">
-            Profile
-          </Link>
         </div>
       );
     } else {
@@ -37,32 +34,29 @@ const Navbar = () => {
     }
   }
   function handleProfileMenuOpen() {
-    // menu below profile picture
+    // show whether user is logged in or not
   }
   return (
     <div>
       <div id="navBarMain">
         <img id="navBarLogo" src="logo.webp" alt="Logo" />
-          <img
-            id="navBarMenuIcon"
-            src="three.svg"
-            alt="Menu Icon"
-            onClick={() => menuClicked()} //this fcn toggles the menuOpen state
-          />
+        <img
+          id="navBarMenuIcon"
+          src="three.svg"
+          alt="Menu Icon"
+          onClick={() => menuClicked()}
+        />
 
         {renderEitherLoginRegisterOrProfilePicture()}
       </div>
       {menuOpen && (
-        <div id="sideBarOpen" className={menuOpen ? 'open' 
-      
-      : 'closed'}>
+        <div id="sideBarOpen">
           <img
             id="navBarMenuIcon"
             src="three.svg"
             alt="Menu Icon"
             onClick={() => menuClicked()}
           />
-          <div><h2>Goodwill <br></br>Connect</h2></div>
           <div id="sideMenuItemContainers">
             <div
               className="sideMenuItem"
@@ -99,14 +93,6 @@ const Navbar = () => {
             >
               <h1 className="sideMenuItemText">Feedback</h1>
               <img className="icon" src="notepad.svg" />
-            </div>
-            <div
-              className="sideMenuItem"
-              id="sideMenuItem5"
-              onClick={() => handleMenuItemClick("/leaderboard")}
-            >
-              <h1 className="sideMenuItemText">Leaderboard</h1>
-              <img className="icon" src="leaderboard.svg" />
             </div>
           </div>
         </div>

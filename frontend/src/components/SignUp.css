@@ -1,38 +1,32 @@
-body {
-  background: white;
+body{
+    background: white;
 }
 
-.form {
-  border-radius: 5px;
-  width: 550px;
-  margin: 20px auto;
-  padding: 20px;
-  margin-top: 80px;
-  background-color: lightgray;
-}
-h2 {
-  font-size: 30px;
-  margin-bottom: 20px;
+.form{
+    border-radius: 5px;
+    width: 550px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: lightgray;
 }
 
-.form-input-sections {
-  text-align: left;
-  padding: 20px 10px;
+.form-input-sections{
+    text-align: left;
+    padding: 20px 10px;
 }
 
-.form-input-sections > * {
-  padding: 5px;
+.form-input-sections > *{
+    padding: 5px;
 }
 
-.form__label {
-  width: 40%;
-  margin-top: 0;
+.form__label{
+    width: 40%;
 }
 
-.form_input {
-  width: 60%;
+.form_input{
+    width: 60%;
 }
 
-.buttonDiv {
-  text-align: center;
+.buttonDiv{
+    text-align: center;
 }
