@@ -6,7 +6,7 @@ import Navbar from './components/Navbar'
 import React, { useState, useEffect } from 'react';
 import './newsletter.css';
 import PostForm from './PostForm.jsx';
-
+import Popup from './components/Popup';
 function newsletter() {
   const [posts, setPosts] = useState([]);
   const [showForm, setShowForm] = useState(false);

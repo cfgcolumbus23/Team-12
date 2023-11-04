@@ -84,7 +84,7 @@ function App() {
       setComment(''); // Clear the comment input
     }
   };
-  */
+  
 
 function submitFunction(){
   axios
