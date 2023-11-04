@@ -34,7 +34,7 @@ const Navbar = () => {
     }
   }
   function handleProfileMenuOpen() {
-    // show whether user is logged in or not
+    // menu below profile picture
   }
   return (
     <div>

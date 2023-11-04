@@ -1,12 +1,11 @@
-#coursesContentContainer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px; /* Adjust the gap between the divs as needed */
-  }
-  
-  .courseCategory {
-    width: 100%; /* Set the width of each div */
-    height: 100px; /* Set the height of each div */
-    /* Add any other styles you want for the courseCategory */
-  }
-  
+#coursesContentContainer{
+    height:70%;
+    width:60%;
+    top:0;
+    left:0;
+    margin-left: 20%;
+    margin-top:7%;
+    background-color:black;
+    position:absolute;
+    color:white;
+}

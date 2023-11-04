@@ -20,7 +20,7 @@
   #navBarLogo{
     max-height:50px;
     width:auto;
-    left:50%;
+    left:48%;
     top:6px;
     position:absolute;
   }
@@ -89,7 +89,7 @@
     text-decoration:none;
     font-family:'Geologica-extrabold';
     margin-right: 10px; /* Adjust as needed */
-    margin-top:20px;
+    margin-top:22px;
   }
   
 .icon{
