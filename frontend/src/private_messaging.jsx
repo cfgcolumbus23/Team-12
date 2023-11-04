@@ -68,9 +68,6 @@ function App() {
       <body className="message-body">
         <div className="app-container">
           <Navbar />
-          <button className="showContacts" onClick={toggleContacts}>
-            Show Contacts
-          </button>
           <div className="centered message-div">
             <div id="allMessages" className="scrollable-container message-div">
               {messages.map((msg, index) => (
@@ -95,9 +92,11 @@ function App() {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               />
-              <input type="submit" value="send" onClick={handleSendMessage} />
-              <button onClick={handleReceiveMessage}>receive</button>
+              <input type="submit" value="Send Message" onClick={handleSendMessage} />
             </div>
+            <button className="showContacts" onClick={toggleContacts}>
+            Show Contacts
+          </button>
           </div>
           <div></div>
           {showContacts && (
